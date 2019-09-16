@@ -1,0 +1,7 @@
+基础模块, 包含config包、domain包。
+    config: 配置包, 存放配置类文件, 如BaseConfig.java
+    domain: 域包, 存放非实体数据结构类文件, 如MusicInfo.java
+
+    依赖关系:
+        依赖: hbwm-util, hbwm-common
+        被依赖: hbwm-da

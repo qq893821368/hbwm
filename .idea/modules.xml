@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/hbwm.iml" filepath="$PROJECT_DIR$/hbwm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hbwm-base/hbwm-base.iml" filepath="$PROJECT_DIR$/hbwm-base/hbwm-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hbwm-bl/hbwm-bl.iml" filepath="$PROJECT_DIR$/hbwm-bl/hbwm-bl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hbwm-common/hbwm-common.iml" filepath="$PROJECT_DIR$/hbwm-common/hbwm-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hbwm-da/hbwm-da.iml" filepath="$PROJECT_DIR$/hbwm-da/hbwm-da.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hbwm-ui/hbwm-ui.iml" filepath="$PROJECT_DIR$/hbwm-ui/hbwm-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hbwm-util/hbwm-util.iml" filepath="$PROJECT_DIR$/hbwm-util/hbwm-util.iml" />
+    </modules>
+  </component>
+</project>

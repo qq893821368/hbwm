@@ -1,0 +1,6 @@
+用户接口模块, 包含controller包
+    controller: 控制器包, 存放控制器类, 为用户访问网站的跳转提供控制, 如UserController.java
+
+    依赖关系:
+        依赖: hbwm-bl
+        被依赖:

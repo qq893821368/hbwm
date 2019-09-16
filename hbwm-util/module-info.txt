@@ -1,0 +1,8 @@
+工具模块, 包含annotation包, interceptor包, util包
+    annotation: 注解包, 存放注解类, 为开发中一些可以封装的功能提供注解型封装, 如Operation.java
+    interceptor: 拦截器包, 存放拦截器类, 为页面的访问流程中提供拦截器, 不允许任意的访问, 如LoginInterceptor.java
+    util: 工具包, 存放基础工具类, 为开发中一些可以封装的功能提供类型封装, 如JacksonUtil.java
+
+    依赖关系:
+        依赖:
+        被依赖: hbwm-base

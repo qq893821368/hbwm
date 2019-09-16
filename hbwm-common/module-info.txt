@@ -1,0 +1,7 @@
+公用模块, 包含model包, query包
+    model: 实体包, 存放实体类文件, 为各个流程提供所需实体, 如User.java
+    query: 分页查询包, 存放分页查询类文件, 为各个流程提供分页查询的功能, 如MusicQuery.java
+
+    依赖关系:
+        依赖:
+        被依赖: hbwm-base

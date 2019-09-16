@@ -1,0 +1,8 @@
+业务逻辑模块, 包含aop包, controller包, impl包
+    aop: 切片包, 存放切片类文件, 为各个流程设置切片, 如LogAspect.java
+    controller: 控制器包, 存放控制器类文件, 为各个业务流程设定逻辑之间的关系, 如LoginController.java
+    impl: 逻辑实现包, 存放逻辑类文件, 为各个逻辑设定完整过程, 如LoginImpl.java
+
+    依赖关系:
+        依赖: hbwm-da
+        被依赖: hbwm-ui

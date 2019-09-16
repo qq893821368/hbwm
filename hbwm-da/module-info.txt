@@ -1,0 +1,8 @@
+数据访问模块, 包含mapper包, repository包
+    mapper: 映射包, 存放映射类文件, 为各个流程提供所需映射, 如MusicMapper.java
+    repository: 仓库包, 存放仓库类文件, 为各个流程提供所需映射, 如MusicRepository.java
+    # mapper和repository是不同框架下的数据访问类, mapper是spring自带的, repository是mybatis的
+
+    依赖关系:
+        依赖: hbwm-base
+        被依赖: hbwm-bl

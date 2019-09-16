@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6c2418ca-4d0b-4fa9-baec-2a1b7c4f4eee" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1QunuTUrfQ5eZORpojkGgCYHYya" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/hbwm-util" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaSpace\hbwm\hbwm-util" />
+      <recent name="D:\IdeaSpace\hbwm\hbwm-ui" />
+      <recent name="D:\IdeaSpace\hbwm\hbwm-da" />
+      <recent name="D:\IdeaSpace\hbwm\hbwm-bl" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.HbwmWebApplication">
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hbwm-bl" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HbwmApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hbwm" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwm.HbwmApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HbwmBaseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hbwm-base" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwmbase.HbwmBaseApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HbwmBlApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hbwm-bl" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwmbl.HbwmBlApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HbwmCommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hbwm-common" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwmcommon.HbwmCommonApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HbwmDaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hbwm-da" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwmda.HbwmDaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HbwmUtilApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hbwm-util" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwmutil.HbwmUtilApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HbwmWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hbwm-ui" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwmweb.HbwmWebApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.DemoApplication" />
+      <item itemvalue="Spring Boot.HbwmApplication" />
+      <item itemvalue="Spring Boot.HbwmBaseApplication" />
+      <item itemvalue="Spring Boot.HbwmBlApplication" />
+      <item itemvalue="Spring Boot.HbwmDaApplication" />
+      <item itemvalue="Spring Boot.HbwmWebApplication" />
+      <item itemvalue="Spring Boot.HbwmUtilApplication" />
+      <item itemvalue="Spring Boot.HbwmCommonApplication" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6c2418ca-4d0b-4fa9-baec-2a1b7c4f4eee" name="Default Changelist" comment="" />
+      <created>1568629570703</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568629570703</updated>
+      <workItem from="1568629579300" duration="8574000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
