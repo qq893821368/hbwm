@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c2418ca-4d0b-4fa9-baec-2a1b7c4f4eee" name="Default Changelist" comment="" />
+    <list default="true" id="6c2418ca-4d0b-4fa9-baec-2a1b7c4f4eee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-base/src/main/java/nchu/software/ruanko/hbwmbase/config/SysConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-base/src/main/java/nchu/software/ruanko/hbwmbase/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-base/src/main/java/nchu/software/ruanko/hbwmbase/domain/MusicInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-base/src/main/java/nchu/software/ruanko/hbwmbase/domain/UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/aop/CollectAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/aop/CommentAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/aop/DownloadAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/aop/LoginAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/aop/UploadAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/impl/MusicLoadImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/impl/UserImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-common/src/main/java/nchu/software/ruanko/hbwmcommon/model/Album.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-common/src/main/java/nchu/software/ruanko/hbwmcommon/model/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-common/src/main/java/nchu/software/ruanko/hbwmcommon/model/Music.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-common/src/main/java/nchu/software/ruanko/hbwmcommon/model/Singer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-common/src/main/java/nchu/software/ruanko/hbwmcommon/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-common/src/main/java/nchu/software/ruanko/hbwmcommon/query/PageQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/mapper/CommentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/mapper/MusicMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/mapper/SingerMapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/repository/CommentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/repository/MusicRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/repository/SingerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/interceptor/LoginInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/interceptor/ResourceInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/util/JacksonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-info.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,9 +44,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Kotlin File" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -30,9 +66,10 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/hbwm-util" />
+    <property name="last_opened_file_path" value="D:/SpringToolSuite4/demo" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -136,10 +173,22 @@
       <option name="presentableId" value="Default" />
       <updated>1568629570703</updated>
       <workItem from="1568629579300" duration="8574000" />
+      <workItem from="1568681363723" duration="2971000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
