@@ -1,56 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c2418ca-4d0b-4fa9-baec-2a1b7c4f4eee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/impl/MusicDisplayImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/util/ExceptionUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4e73b2fd-2ed2-475f-8480-10e29753f86e" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/hbwm-da/target/" />
+    <ignored path="$PROJECT_DIR$/hbwm-base/target/" />
+    <ignored path="$PROJECT_DIR$/hbwm-common/target/" />
+    <ignored path="$PROJECT_DIR$/hbwm-util/target/" />
+    <ignored path="$PROJECT_DIR$/hbwm-bl/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/hbwm-ui/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="HbwmWebApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/HbwmWebApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Kotlin File" />
-        <option value="AnnotationType" />
-        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
   </component>
-  <component name="ProjectId" id="1QunuTUrfQ5eZORpojkGgCYHYya" />
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/home.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="902" />
+    <option name="y" value="18" />
+    <option name="width" value="905" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbwm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbwm" type="462c0819:PsiDirectoryNode" />
+              <item name="hbwm-ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbwm" type="462c0819:PsiDirectoryNode" />
+              <item name="hbwm-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbwm" type="462c0819:PsiDirectoryNode" />
+              <item name="hbwm-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbwm" type="462c0819:PsiDirectoryNode" />
+              <item name="hbwm-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbwm" type="462c0819:PsiDirectoryNode" />
+              <item name="hbwm-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hbwmweb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbwm" type="462c0819:PsiDirectoryNode" />
+              <item name="hbwm-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbwm" type="462c0819:PsiDirectoryNode" />
+              <item name="hbwm-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/SpringToolSuite4/demo" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IdeaSpace\hbwm\hbwm-util" />
-      <recent name="D:\IdeaSpace\hbwm\hbwm-ui" />
-      <recent name="D:\IdeaSpace\hbwm\hbwm-da" />
-      <recent name="D:\IdeaSpace\hbwm\hbwm-bl" />
-    </key>
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -64,109 +168,176 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.HbwmWebApplication">
-    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="hbwm-bl" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="HbwmApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="hbwm" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwm.HbwmApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HbwmBaseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="hbwm-base" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwmbase.HbwmBaseApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HbwmBlApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="hbwm-bl" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwmbl.HbwmBlApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HbwmCommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="hbwm-common" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwmcommon.HbwmCommonApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HbwmDaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="hbwm-da" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwmda.HbwmDaApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HbwmUtilApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="hbwm-util" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwmutil.HbwmUtilApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration name="HbwmWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="hbwm-ui" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="nchu.software.ruanko.hbwmweb.HbwmWebApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
-    <list>
-      <item itemvalue="Spring Boot.DemoApplication" />
-      <item itemvalue="Spring Boot.HbwmApplication" />
-      <item itemvalue="Spring Boot.HbwmBaseApplication" />
-      <item itemvalue="Spring Boot.HbwmBlApplication" />
-      <item itemvalue="Spring Boot.HbwmDaApplication" />
-      <item itemvalue="Spring Boot.HbwmWebApplication" />
-      <item itemvalue="Spring Boot.HbwmUtilApplication" />
-      <item itemvalue="Spring Boot.HbwmCommonApplication" />
-    </list>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6c2418ca-4d0b-4fa9-baec-2a1b7c4f4eee" name="Default Changelist" comment="" />
-      <created>1568629570703</created>
+      <changelist id="4e73b2fd-2ed2-475f-8480-10e29753f86e" name="Default" comment="" />
+      <created>1568771213937</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1568629570703</updated>
-      <workItem from="1568629579300" duration="8574000" />
-      <workItem from="1568681363723" duration="2971000" />
-      <workItem from="1568686390421" duration="1184000" />
-      <workItem from="1568688618694" duration="1892000" />
-      <workItem from="1568707942884" duration="11016000" />
+      <updated>1568771213937</updated>
+      <workItem from="1568771217702" duration="1688000" />
     </task>
+    <task id="LOCAL-00001" summary="test-ljl">
+      <created>1568772086648</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568772086648</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test-ljl">
+      <created>1568772260758</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568772260758</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test-ljl">
+      <created>1568772644389</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568772644389</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test-ljl">
+      <created>1568772731961</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568772731961</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1688000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" />
+      <window_info anchor="right" id="Database" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Image Layers" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32952926" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.123324394" />
+      <window_info anchor="right" id="Bean Validation" />
+      <window_info id="Web" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test-ljl" />
+    <option name="LAST_COMMIT_MESSAGE" value="test-ljl" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/HbwmWebApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
