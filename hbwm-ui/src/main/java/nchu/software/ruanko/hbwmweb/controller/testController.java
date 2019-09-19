@@ -9,4 +9,6 @@ public class testController {
     public String index(){
         return "index";
     }
+    @GetMapping("/fuck")
+    public String fuck(){ return "fuck"; }
 }

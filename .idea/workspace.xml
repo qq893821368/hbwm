@@ -2,9 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c2418ca-4d0b-4fa9-baec-2a1b7c4f4eee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/impl/MusicDisplayImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/util/ExceptionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_core_4_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_2_1_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_email_1_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/bootstrap/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/layui/css/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/layui/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/layui/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/util/EmailUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-base/src/main/java/nchu/software/ruanko/hbwmbase/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-base/src/main/java/nchu/software/ruanko/hbwmbase/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/repository/MusicRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/repository/MusicRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/HbwmWebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/HbwmWebApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/UserUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/testController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/testController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-util/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/interceptor/LoginInterceptor.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,15 +39,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Kotlin File" />
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -43,13 +74,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="D:/SpringToolSuite4/demo" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaSpace\hbwm\hbwm-ui\src\main\resources\static\bootstrap" />
+      <recent name="D:\IdeaSpace\hbwm\hbwm-ui\src\main\resources\static\layui" />
+      <recent name="D:\IdeaSpace\hbwm\hbwm-ui\src\main\resources\static\" />
+      <recent name="D:\IdeaSpace\hbwm\hbwm-ui\src\main\resources\static" />
       <recent name="D:\IdeaSpace\hbwm\hbwm-util" />
-      <recent name="D:\IdeaSpace\hbwm\hbwm-ui" />
-      <recent name="D:\IdeaSpace\hbwm\hbwm-da" />
-      <recent name="D:\IdeaSpace\hbwm\hbwm-bl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -124,6 +158,134 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tomcat 9.0.12" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.12" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="jdk8" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_12_hbwm" />
+        <option name="PRESERVE_SESSIONS" value="true" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51364" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.12" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="jdk8">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_hbwm" />
+        <option name="PRESERVE_SESSIONS" value="true" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51364" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Spring Boot.DemoApplication" />
       <item itemvalue="Spring Boot.HbwmApplication" />
@@ -133,6 +295,7 @@
       <item itemvalue="Spring Boot.HbwmWebApplication" />
       <item itemvalue="Spring Boot.HbwmUtilApplication" />
       <item itemvalue="Spring Boot.HbwmCommonApplication" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.12" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -150,6 +313,11 @@
       <workItem from="1568686390421" duration="1184000" />
       <workItem from="1568688618694" duration="1892000" />
       <workItem from="1568707942884" duration="11016000" />
+      <workItem from="1568765657824" duration="1321000" />
+      <workItem from="1568770425947" duration="5696000" />
+      <workItem from="1568782410254" duration="4558000" />
+      <workItem from="1568851181049" duration="5158000" />
+      <workItem from="1568856650689" duration="883000" />
     </task>
     <servers />
   </component>
