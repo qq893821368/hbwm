@@ -1,5 +1,6 @@
 package nchu.software.ruanko.hbwmbase.config;
 
+import nchu.software.ruanko.hbwmutil.interceptor.LoginAntiInterceptor;
 import nchu.software.ruanko.hbwmutil.interceptor.LoginInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,10 +15,15 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistration
 public class WebConfig implements WebMvcConfigurer  {
     @Autowired
     LoginInterceptor loginInterceptor;
+    @Autowired
+    LoginAntiInterceptor loginAntiInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        String[] loginPage = {"/","/login", "/bootstrap/**", "/layui/**", "/register"};
+        String[] loginPage = {"/verify", "/verifyImpl", "/login", "/bootstrap/**", "/layui/**", "/register"};
+        String[] antiLoginPage = {"/login"};
+
         registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns(loginPage);
+        //registry.addInterceptor(loginAntiInterceptor).addPathPatterns(antiLoginPage);
     }
 }

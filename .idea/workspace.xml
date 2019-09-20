@@ -2,32 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c2418ca-4d0b-4fa9-baec-2a1b7c4f4eee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_core_4_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_2_1_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_email_1_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/bootstrap/layui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/layui/css/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/layui/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/layui/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/util/EmailUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/interceptor/LoginAntiInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/util/StringUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbwm-base/src/main/java/nchu/software/ruanko/hbwmbase/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-base/src/main/java/nchu/software/ruanko/hbwmbase/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/repository/MusicRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/repository/MusicRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/impl/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/impl/UserImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-common/src/main/java/nchu/software/ruanko/hbwmcommon/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-common/src/main/java/nchu/software/ruanko/hbwmcommon/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/HbwmWebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/HbwmWebApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/UserUIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/testController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/testController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-util/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/fuck.html" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/fuck.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/interceptor/LoginInterceptor.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,8 +30,8 @@
       <list>
         <option value="Kotlin File" />
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,8 +62,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/SpringToolSuite4/demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
@@ -317,7 +309,9 @@
       <workItem from="1568770425947" duration="5696000" />
       <workItem from="1568782410254" duration="4558000" />
       <workItem from="1568851181049" duration="5158000" />
-      <workItem from="1568856650689" duration="883000" />
+      <workItem from="1568856650689" duration="6469000" />
+      <workItem from="1568938436734" duration="11864000" />
+      <workItem from="1568953074439" duration="10305000" />
     </task>
     <servers />
   </component>
@@ -336,5 +330,36 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/impl/UserImpl.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/impl/UserImpl.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/impl/UserImpl.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/util/StringUtil.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/UserUIController.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
