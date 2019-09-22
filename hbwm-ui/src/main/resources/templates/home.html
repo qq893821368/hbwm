@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <title>layui</title>
     <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui-v2.5.4/css/layui.css" />
+    <style>
+        .layui-tab-title li {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: middle;
+            font-size: 10px;
+            transition: all .2s;
+            -webkit-transition: all .2s;
+            position: relative;
+            line-height: 40px;
+            min-width: 0px;
+            padding: 0 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
     <script src="https://lib.baomitu.com/json3/3.3.3/json3.min.js"></script>
     <script src="https://www.layuicdn.com/layui-v2.5.4/layui.all.js"></script>
     <script src="https://lib.baomitu.com/echarts/4.2.1/echarts.min.js"></script>
@@ -48,98 +65,340 @@
         <div class="layui-col-md8 layui-col-lg7.5">
             <div class="layui-fluid">
                 <div class="layui-row">
-                    <div class="layui-col-md4 layui-col-lg4">
+                    <div class="layui-col-md6 layui-col-lg6">
                         新歌首发
                     </div>
-                    <div class="layui-col-md5 layui-col-lg5">
-                        <ul>
-                            <li class="layui-this">网站设置</li>
-                            <li>用户管理</li>
-                            <li>权限分配</li>
-                            <li>商品管理</li>
-                            <li>订单管理</li>
-                        </ul>
-                    </div>
-                    <div class="layui-col-md3 layui-col-lg3">
+
+                    <div class="layui-col-md6 layui-col-lg6">
                         <a class="layui-btn" style="float: right;">全部播放</a>
                     </div>
                 </div>
-                <hr class="layui-bg-green"></hr><fieldset class="layui-elem-field">
-                <!--<legend>字段集区块 - 默认风格</legend>-->
-                <div class="layui-field-box">
-                    <div class="layui-row">
-                        <a>
-                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
-                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
-                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
-                        </a>
-                    </div>
-                    <div class="layui-row">
-                        <a>
-                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
-                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
-                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
-                        </a>
-                    </div>
-                    <div class="layui-row">
-                        <a>
-                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
-                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
-                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
-                        </a>
-                    </div>
-                    <div class="layui-row">
-                        <a>
-                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
-                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
-                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
-                        </a>
-                    </div>
-                    <div class="layui-row">
-                        <a>
-                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
-                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
-                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
-                        </a>
-                    </div>
-                    <div class="layui-row">
-                        <a>
-                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
-                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
-                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
-                        </a>
-                    </div>
-                    <div class="layui-row">
-                        <a>
-                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
-                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
-                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
-                        </a>
-                    </div>
-                    <div class="layui-row">
-                        <a>
-                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
-                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
-                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
-                        </a>
-                    </div>
-                    <div class="layui-row">
-                        <a>
-                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
-                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
-                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
-                        </a>
-                    </div>
-                    <div class="layui-row">
-                        <a>
-                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
-                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
-                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
-                        </a>
-                    </div>
 
+                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief" >
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">华语</li>
+                        <li>欧美</li>
+                        <li>日韩</li>
+                        <li>其他</li>
+                    </ul>
+                    <hr class="layui-bg-green">
+                    <div class="layui-tab-content">
+                        <!--华语新歌--><div class="layui-tab-item layui-show"><!--华语新歌-->
+                            <fieldset class="layui-elem-field">
+                                <!--<legend>字段集区块 - 默认风格</legend>-->
+                                <div class="layui-field-box">
+                                    <div class="layui-row">
+                                        <a>
+                                            <div class="layui-col-md4 layui-col-lg4">华语歌名</div>
+                                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                        </a>
+                                    </div>
+                                    <div class="layui-row">
+                                        <a>
+                                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                        </a>
+                                    </div>
+                                    <div class="layui-row">
+                                        <a>
+                                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                        </a>
+                                    </div>
+                                    <div class="layui-row">
+                                        <a>
+                                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                        </a>
+                                    </div>
+                                    <div class="layui-row">
+                                        <a>
+                                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                        </a>
+                                    </div>
+                                    <div class="layui-row">
+                                        <a>
+                                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                        </a>
+                                    </div>
+                                    <div class="layui-row">
+                                        <a>
+                                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                        </a>
+                                    </div>
+                                    <div class="layui-row">
+                                        <a>
+                                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                        </a>
+                                    </div>
+                                    <div class="layui-row">
+                                        <a>
+                                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                        </a>
+                                    </div>
+                                    <div class="layui-row">
+                                        <a>
+                                            <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                            <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                            <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+                        </div>
+                        <!--欧美新歌--><div class="layui-tab-item">
+                        <fieldset class="layui-elem-field">
+                            <!--<legend>字段集区块 - 默认风格</legend>-->
+                            <div class="layui-field-box">
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">欧美歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </fieldset></div>
+                        <!--日韩新歌--><div class="layui-tab-item">
+                        <fieldset class="layui-elem-field">
+                            <!--<legend>字段集区块 - 默认风格</legend>-->
+                            <div class="layui-field-box">
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">日韩歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                    </div>
+                        <!--其他新歌--><div class="layui-tab-item">
+                        <fieldset class="layui-elem-field">
+                            <!--<legend>字段集区块 - 默认风格</legend>-->
+                            <div class="layui-field-box">
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">其他歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+                                <div class="layui-row">
+                                    <a>
+                                        <div class="layui-col-md4 layui-col-lg4">歌名</div>
+                                        <div class="layui-col-md4 layui-col-lg4">歌手</div>
+                                        <div class="layui-col-md4 layui-col-lg4"><div style="float:right">00:00</div></div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                    </div>
+                        <div class="layui-tab-item">内容5</div>
+                    </div>
                 </div>
-            </fieldset>
+
+
             </div>
             <div class="layui-fluid">
                 <div class="layui-row">
@@ -465,6 +724,16 @@
     }
     magicalDragLayuiUtil.rebuildLayUiControls();
     magicalDragLayuiUtil.renderEcharts();
+</script>
+<script>
+    //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+
+        element.on('tab(docDemoTabBrief)', function(data){
+            console.log(data);
+        });
+    });
 </script>
 </body>
 </html>
