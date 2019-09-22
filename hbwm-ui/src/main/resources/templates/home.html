@@ -10,11 +10,11 @@
             *display: inline;
             *zoom: 1;
             vertical-align: middle;
-            font-size: 10px;
+            font-size: 12px;
             transition: all .2s;
             -webkit-transition: all .2s;
             position: relative;
-            line-height: 40px;
+            line-height: 53px;
             min-width: 0px;
             padding: 0 5px;
             text-align: center;
@@ -36,10 +36,11 @@
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
 </head>
-<body style="background-color:#eee;padding: 20px;">
-<div class="layui-fluid" style="padding-right: 250px; padding-left: 250px;">
+<body style="background-color:#ffffff;">
+<div class="layui-fluid" style="margin-right: 250px; margin-left: 250px;background-color:#eee;;">
     <div class="layui-row">
         <div class="layui-row">
+            <br>
             <div class="layui-col-md2 layui-col-lg2">
                 <img style="width: 20%;" src="img.jpg"></img>
                 <i style="font-size: 30px">心随乐动</i>
@@ -52,6 +53,7 @@
             </div>
         </div>
     </div>
+    <br>
     <div class="layui-row">
         <ul class="layui-nav">
             <li class="layui-nav-item"><a>首页</a></li>
@@ -61,28 +63,32 @@
         </ul>
     </div>
     <br>
+
     <div class="layui-row">
         <div class="layui-col-md8 layui-col-lg7.5">
-            <div class="layui-fluid">
+            <div class="layui-fluid" style="height: 300px">
                 <div class="layui-row">
                     <div class="layui-col-md6 layui-col-lg6">
-                        新歌首发
+                        <h1><span style="color: rgba(64,162,122,0.9)">新歌</span><span>首发</span></h1>
                     </div>
 
-                    <div class="layui-col-md6 layui-col-lg6">
-                        <a class="layui-btn" style="float: right;">全部播放</a>
-                    </div>
+
                 </div>
 
-                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief" >
-                    <ul class="layui-tab-title">
-                        <li class="layui-this">华语</li>
-                        <li>欧美</li>
-                        <li>日韩</li>
-                        <li>其他</li>
+                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief" style="position: relative;top:-50px" >
+                    <ul class="layui-tab-title" >
+                        <div style="padding-left: 140px">
+                            <li class="layui-this">华语</li>
+                            <li>欧美</li>
+                            <li>日韩</li>
+                            <li>其他</li>
+                            <a class="layui-btn" style="float: right;">
+                                全部播放
+                            </a>
+                        </div>
                     </ul>
-                    <hr class="layui-bg-green">
-                    <div class="layui-tab-content">
+                    <hr class="layui-bg-green" >
+                    <div class="layui-tab-content" style="padding: 0px">
                         <!--华语新歌--><div class="layui-tab-item layui-show"><!--华语新歌-->
                             <fieldset class="layui-elem-field">
                                 <!--<legend>字段集区块 - 默认风格</legend>-->
@@ -397,19 +403,18 @@
                         <div class="layui-tab-item">内容5</div>
                     </div>
                 </div>
-
-
             </div>
             <div class="layui-fluid">
                 <div class="layui-row">
                     <div class="layui-col-md6 layui-col-lg6">
-                        推荐歌曲
+                        <h1><span style="color: rgba(64,162,122,0.9)">推荐</span><span>歌曲</span></h1>
                     </div>
                     <div class="layui-col-md6 layui-col-lg6">
                         <a class="layui-btn" style="float: right;">全部播放</a>
                     </div>
                 </div>
-                <hr class="layui-bg-green"></hr><fieldset class="layui-elem-field">
+                <hr class="layui-bg-green">
+                <fieldset class="layui-elem-field">
               <!--  <legend>字段集区块 - 默认风格</legend>-->
                 <div class="layui-field-box">
                     <div class="layui-row">
@@ -483,13 +488,13 @@
                         </a>
                     </div>
                 </div>
-            </fieldset>
+                </fieldset>
             </div>
         </div>
         <div class="layui-col-md4 layui-col-lg4.5">
             <div class="layui-fluid">
                 <div class="layui-fluid">
-                    热门歌手
+                    <h1><span style="color: rgba(64,162,122,0.9)">热门</span><span>歌手</span></h1>
                 </div>
                 <hr class="layui-bg-green"></hr>
                 <div class="layui-row  layui-col-space15">
@@ -735,5 +740,6 @@
         });
     });
 </script>
+
 </body>
 </html>
