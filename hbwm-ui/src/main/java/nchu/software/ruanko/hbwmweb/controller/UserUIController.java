@@ -27,15 +27,22 @@ public class UserUIController {
     @RequestMapping("/verify")
     public void verify(Model model, HttpServletRequest request, HttpServletResponse response, String account, String password) throws IOException, ServletException {
         String msg = null;
-        if((msg = (String) request.getSession().getAttribute("msg")) != null) {
+        try{
+            msg = (String) request.getSession().getAttribute("msg");
+        }catch (NullPointerException NPE){
+            msg = null;
+        }finally {
+            request.getSession().removeAttribute("msg");
+        }
+        if(msg != null) {
             if (msg.equals("access")) {
                 request.getSession().setAttribute("user", account);
                 response.sendRedirect("/home");
             }
-            else
+            else{
+                request.getSession().setAttribute("message", msg);
                 response.sendRedirect("/login");
-            //model.addAttribute("message", msg);
-            request.getSession().removeAttribute("msg");
+            }
             return ;
         }
         request.getRequestDispatcher("/verifyImpl").forward(request, response);

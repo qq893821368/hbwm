@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c2418ca-4d0b-4fa9-baec-2a1b7c4f4eee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/interceptor/LoginAntiInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/util/StringUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-base/src/main/java/nchu/software/ruanko/hbwmbase/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-base/src/main/java/nchu/software/ruanko/hbwmbase/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/impl/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-bl/src/main/java/nchu/software/ruanko/hbwmbl/impl/UserImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-common/src/main/java/nchu/software/ruanko/hbwmcommon/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-common/src/main/java/nchu/software/ruanko/hbwmcommon/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-da/src/main/java/nchu/software/ruanko/hbwmda/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/HbwmWebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/HbwmWebApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/UserUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/testController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/testController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/fuck.html" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/fuck.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-util/src/main/java/nchu/software/ruanko/hbwmutil/interceptor/LoginInterceptor.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -312,6 +299,9 @@
       <workItem from="1568856650689" duration="6469000" />
       <workItem from="1568938436734" duration="11864000" />
       <workItem from="1568953074439" duration="10305000" />
+      <workItem from="1568978927205" duration="2223000" />
+      <workItem from="1569112155727" duration="2903000" />
+      <workItem from="1569159843927" duration="3488000" />
     </task>
     <servers />
   </component>

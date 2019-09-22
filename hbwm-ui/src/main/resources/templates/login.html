@@ -31,7 +31,7 @@
                         <div class="layui-form-item">
                             <label class="layadmin-user-login-icon layui-icon layui-icon-username" for="account"></label>
                             <input type="text" name="account" id="account" lay-verify="required" placeholder="用户名" class="layui-input">
-                            <p id="message" style="color: red" ></p><!--th:text="*{message}"-->
+                            <p id="message" style="color: red" th:text="${session.message}"></p><!--th:text="*{message}"-->
                         </div>
                         <div class="layui-form-item">
                             <label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-password"></label>
