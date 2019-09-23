@@ -57,13 +57,13 @@
                 <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-login-submit">登 录</button>
             </div>
             <div class="layui-trans layui-form-item layadmin-user-login-other">
-                <label>社交账号登录</label>
-                <a href="javascript:;"><i class="layui-icon layui-icon-login-qq"></i></a>
-                <a href="javascript:;"><i class="layui-icon layui-icon-login-wechat"></i></a>
-                <a href="javascript:;"><i class="layui-icon layui-icon-cellphone"></i></a>
-
+                <label >社交账号登录</label>
+                <a href="javascript:;"><i class="layui-icon layui-icon-login-qq" style="position:relative;"></i></a>
+                <a href="javascript:;"><i class="layui-icon layui-icon-login-wechat" style="position:relative;"></i></a>
+                <a href="javascript:;"><i class="layui-icon layui-icon-cellphone" style="position:relative;"></i></a>
+                <a th:replace="fragments/register::body"></a>
             </div>
-            <a th:replace="fragments/register::body"></a>
+
         </div>
     </div>
 
