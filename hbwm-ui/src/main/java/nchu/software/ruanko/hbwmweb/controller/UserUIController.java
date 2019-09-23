@@ -1,7 +1,5 @@
 package nchu.software.ruanko.hbwmweb.controller;
 
-import org.apache.http.HttpResponse;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +23,7 @@ public class UserUIController {
     }
 
     @RequestMapping("/verify")
-    public void verify(Model model, HttpServletRequest request, HttpServletResponse response, String account, String password) throws IOException, ServletException {
+    public void verify(HttpServletRequest request, HttpServletResponse response, String account, String password, Model model) throws IOException, ServletException {
         String msg = null;
         try{
             msg = (String) request.getSession().getAttribute("msg");
