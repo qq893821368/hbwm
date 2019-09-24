@@ -21,4 +21,8 @@ public class testController {
         return "reset";
     }
 
+    @GetMapping("/playMusic")
+    public String play(){
+        return "playMusic";
+    }
 }

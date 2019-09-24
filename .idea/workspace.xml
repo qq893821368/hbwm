@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c2418ca-4d0b-4fa9-baec-2a1b7c4f4eee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/css/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/css/layui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/font/iconfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/js/layui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/reset.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/playMusic.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/testController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/testController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/bootstrap/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/fragments/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/fragments/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/layui.html" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/login.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/hbwm-da/target/" />
     <ignored path="$PROJECT_DIR$/hbwm-ui/target/" />
@@ -30,44 +22,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="51" column="22" lean-forward="true" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/fragments/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="27" column="131" selection-start-line="27" selection-start-column="131" selection-end-line="27" selection-end-column="131" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reset.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/reset.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="59" column="18" lean-forward="true" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="testController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/testController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+            <state relative-caret-position="316">
+              <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
               <folding>
                 <element signature="e#384#385#0" expanded="true" />
                 <element signature="e#414#415#0" expanded="true" />
                 <element signature="e#472#473#0" expanded="true" />
                 <element signature="e#496#497#0" expanded="true" />
+                <element signature="e#551#552#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="playMusic.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/playMusic.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -77,10 +52,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Kotlin File" />
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -92,8 +67,9 @@
       <list>
         <option value="$PROJECT_DIR$/hbwm-common/src/main/java/nchu/software/ruanko/hbwmcommon/model/User.java" />
         <option value="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/fragments/register.html" />
-        <option value="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/testController.java" />
         <option value="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/login.html" />
+        <option value="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/playMusic.html" />
+        <option value="$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/testController.java" />
       </list>
     </option>
   </component>
@@ -195,7 +171,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="music" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
@@ -205,28 +181,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hbwm" type="462c0819:PsiDirectoryNode" />
-              <item name="hbwm-ui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hbwm" type="462c0819:PsiDirectoryNode" />
-              <item name="hbwm-ui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="font" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
@@ -346,12 +300,12 @@
       <workItem from="1569114921596" duration="1143000" />
       <workItem from="1569160377775" duration="1681000" />
       <workItem from="1569201133411" duration="1518000" />
-      <workItem from="1569203248729" duration="1986000" />
+      <workItem from="1569203248729" duration="3870000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12904000" />
+    <option name="totallyTimeSpent" value="14788000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -375,10 +329,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2956153" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23762377" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23190348" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23190348" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -473,6 +427,7 @@
             <element signature="e#414#415#0" expanded="true" />
             <element signature="e#472#473#0" expanded="true" />
             <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#551#552#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -628,19 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/testController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding>
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -657,8 +599,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/reset.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="2006">
           <caret line="59" column="18" lean-forward="true" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/playMusic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/java/nchu/software/ruanko/hbwmweb/controller/testController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+          <folding>
+            <element signature="e#384#385#0" expanded="true" />
+            <element signature="e#414#415#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#551#552#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
