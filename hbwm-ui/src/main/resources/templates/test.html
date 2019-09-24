@@ -18,28 +18,25 @@
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
+    <style>
+        body{
+            background:#2b2938;
+        }
+        .btn-audio{
+            margin: 90px auto;
+            width: 186px;
+            height: 186px;
+            background:url(../static/images.icon/play-circle.png) no-repeat center bottom;
+            background-size:cover;
+        }
+
+    </style>
 </head>
-<body class="layui-form" style="background-color:#eee;padding: 20px;">
+<body>
 <div class="layui-row">
-    <div class="layui-col-xs12">
+    <div class="btn-audio"><audio id="mp3Btn"><source src="../static/music/Kendrick%20Lamar%20-%20HUMBLE..flac" type="audio/mpeg" /></audio></div>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.10.0/jquery.min.js"></script>
 
-        <div class="layui-tab" lay-filter="demo">
-            <ul class="layui-tab-title">
-                <li class="layui-this">网站设置</li>
-                <li>商品管理</li>
-                <li>订单管理</li>
-            </ul>
-
-        </div>
-        <div class="layui-tab-content">
-            <div class="layui-tab-item layui-show">内容1</div>
-            <div class="layui-tab-item">内容2</div>
-            <div class="layui-tab-item">内容3</div>
-        </div>
-
-
-    </div>
-    <div class="layui-col-xs12"></div>
 </div>
 <script>
     //以下脚本为标签属性转换成layui组件的还原过程
@@ -260,5 +257,29 @@
         });
     });
 </script>
+<script type="text/javascript">
+    $(function(){
+        //播放完毕
+        $('#mp3Btn').on('ended', function() {
+            console.log("音频已播放完成");
+            $('.btn-audio').css({'background':'url(../static/images.icon/play-circle.png) no-repeat center bottom','background-size':'cover'});
+        })
+        //播放器控制
+        var audio = document.getElementById('mp3Btn');
+        audio.volume = .3;
+        $('.btn-audio').click(function() {
+            event.stopPropagation();//防止冒泡
+            if(audio.paused){ //如果当前是暂停状态
+                $('.btn-audio').css({'background':'url(../static/images.icon/timeout.png) no-repeat center bottom','background-size':'cover'});
+                audio.play(); //播放
+                return;
+            }else{//当前是播放状态
+                $('.btn-audio').css({'background':'url(../static/images.icon/play-circle.png) no-repeat center bottom','background-size':'cover'});
+                audio.pause(); //暂停
+            }
+        });
+    })
+</script>
+
 </body>
 </html>
