@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e73b2fd-2ed2-475f-8480-10e29753f86e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/images.icon/left-circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/images.icon/play-circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/images.icon/right-circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/images.icon/timeout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/music/Kendrick Lamar - HUMBLE..flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/static/music/李荣浩 - 出卖.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/play.html" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/play.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/test.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/hbwm-da/target/" />
     <ignored path="$PROJECT_DIR$/hbwm-base/target/" />
@@ -46,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="play.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="play.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/play.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+            <state relative-caret-position="576">
+              <caret line="117" column="10" lean-forward="true" selection-start-line="117" selection-start-column="10" selection-end-line="117" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -60,6 +52,13 @@
                 <element signature="n#style#0;n#h1#0;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5112" />
           </provider>
         </entry>
       </file>
@@ -191,6 +190,11 @@
             <path>
               <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
               <item name="hbwm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbwm" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hbwm" type="b2602c69:ProjectViewProjectNode" />
@@ -375,7 +379,7 @@
       <workItem from="1568937010597" duration="6579000" />
       <workItem from="1569138545232" duration="12977000" />
       <workItem from="1569196340163" duration="13926000" />
-      <workItem from="1569282782997" duration="4767000" />
+      <workItem from="1569282782997" duration="5036000" />
     </task>
     <task id="LOCAL-00001" summary="test-ljl">
       <created>1568772086648</created>
@@ -545,11 +549,18 @@
       <option name="project" value="LOCAL" />
       <updated>1569233911689</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="test-ljl1">
+      <created>1569287987794</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1569287987794</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47812000" />
+    <option name="totallyTimeSpent" value="48081000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -907,8 +918,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hbwm-ui/src/main/resources/templates/play.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+        <state relative-caret-position="576">
+          <caret line="117" column="10" lean-forward="true" selection-start-line="117" selection-start-column="10" selection-end-line="117" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -918,6 +929,11 @@
             <element signature="n#style#0;n#h1#0;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5112" />
       </provider>
     </entry>
   </component>
