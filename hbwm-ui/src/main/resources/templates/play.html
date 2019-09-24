@@ -34,11 +34,69 @@
             background:url(../static/images.icon/play-circle.png) no-repeat center bottom;
             background-size:cover;
         }
+
+/*进度条*/
+
+        .SongTime{
+            float: right;
+            font-family: cursive,microsoft Yahei;
+            font-size: 14px;
+            color: #a5a5a5;
+        }
+
+        .Process{
+            margin-top: 25px;
+        }
+        .ProcessAll{
+            width: 400px;
+            float: left;
+            height: 6px;
+            cursor: pointer;
+            background-color:rgba(0,0,0,0.2);
+        }
+        .ProcessNow{
+            width: 0px;
+            float: left;
+            position: absolute;
+            height: 6px;
+            cursor: pointer;
+            background-color: #198f53;
+        }
+
+        /*音量条*/
+        input[type="range"] {
+            /*-webkit-box-shadow: 0 1px 0 0px #424242, 0 1px 0 #060607 inset, 0px 2px 10px 0px black inset, 1px 0px 2px rgba(0, 0, 0, 0.4) inset, 0 0px 1px rgba(0, 0, 0, 0.6) inset;*/
+            -webkit-appearance: none; /*去除默认样式*/
+            margin-top: 25px;
+            background-color: rgba(235, 239, 244, 0.51);
+            /*border-radius: 15px;*/
+            width: 100px !important;
+            -webkit-appearance: none;
+            height:3px;
+            padding: 0;
+            border: none;
+
+            /*input的长度为80%，margin-left的长度为10%*/
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;/*去除默认样式*/
+            cursor: default;
+            top: 0;
+            height: 13px;
+            width: 13px;
+            transform: translateY(0px);
+            /*background: none repeat scroll 0 0 #5891f5;*/
+            background: #fff;
+            border-radius: 15px;
+            border: 4px solid #198f53;
+            /*-webkit-box-shadow: 0 -1px 1px #fc7701 inset;*/
+        }
     </style>
     <script src="https://lib.baomitu.com/json3/3.3.3/json3.min.js"></script>
   <!--  <script src="https://www.layuicdn.com/layui-v2.5.4/layui.all.js"></script>-->
     <script src="layui/layui.all.js"></script>
     <script src="https://lib.baomitu.com/echarts/4.2.1/echarts.min.js"></script>
+    <!--播放按钮-->
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.10.0/jquery.min.js"></script>
     <!--layui的table col操作列自定义的模板 您可以根据自己的实际情况改动-->
     <script type="text/html" id="tableToolbar">
@@ -100,18 +158,30 @@
             <div class="layui-col-md3 layui-col-lg3">
                 <div class="layui-row">
                     <!--上一曲-->
-                    <div class="layui-col-md4 layui-col-lg4"><img src="../static/images.icon/left-circle.png" height="60" width="60"/></div>
+                    <div class="layui-col-md4 layui-col-lg4"><img src="../static/images.icon/left-circle.png" height="50" width="50"/></div>
                     <!--播放暂停-->
                     <div class="layui-col-md4 layui-col-lg4"><div class="btn-audio"><audio id="mp3Btn"><source src="../static/music/Kendrick%20Lamar%20-%20HUMBLE..flac" type="audio/mpeg" /></audio></div></div>
                     <!--下一曲-->
-                    <div class="layui-col-md4 layui-col-lg4"><img src="../static/images.icon/right-circle.png" height="60" width="60"/></div>
+                    <div class="layui-col-md4 layui-col-lg4"><img src="../static/images.icon/right-circle.png" height="50" width="50"/></div>
                 </div>
 
 
 
             </div>
-            <div class="layui-col-md6 layui-col-lg6">1</div>
-            <div class="layui-col-md3 layui-col-lg3"></div>
+            <!--进度条-->
+            <div class="layui-col-md6 layui-col-lg6">
+                <div class="Process"> <!-- Process -->
+                <div class="ProcessAll" ></div> <!-- ProcessAll -->
+                <div class="ProcessNow"></div> <!-- ProcessNow -->
+                <div class="SongTime">00:00&nbsp;|&nbsp;00:00</div> <!-- Time -->
+            </div> <!-- Process End --></div>
+            <!--控件-->
+            <div class="layui-col-md3 layui-col-lg3">
+                <span>音量:</span>
+                <input type="range" min="0" max="100" value="50" id="ran"/>
+
+
+            </div>
 
         </div>
 
@@ -131,6 +201,7 @@
             console.log(data);
         });
     });
+
 </script>
 
 
@@ -144,11 +215,15 @@
         })
         //播放器控制
         var audio = document.getElementById('mp3Btn');
-        audio.volume = .3;
+        var ran=document.getElementById("ran");
+
+     //   audio.volume = .3;
+
         $('.btn-audio').click(function() {
             event.stopPropagation();//防止冒泡
             if(audio.paused){ //如果当前是暂停状态
                 $('.btn-audio').css({'background':'url(../static/images.icon/timeout.png) no-repeat center bottom','background-size':'cover'});
+                TimeSpan();
                 audio.play(); //播放
                 return;
             }else{//当前是播放状态
@@ -156,7 +231,40 @@
                 audio.pause(); //暂停
             }
         });
+
+        function TimeSpan() {
+            var ProcessNow = 0;
+            setInterval(function () {
+                var ProcessNow = (audio.currentTime / audio.duration) * 400;
+                $(".ProcessNow").css("width", ProcessNow);
+                var currentTime = timeFormat(audio.currentTime);
+                var timeAll = timeFormat(TimeAll());
+                $(".SongTime").html(currentTime + " | " + timeAll);
+            }, 1000);
+        }  //TimeSpan()
+
+        function timeFormat(number) {
+            var minute = parseInt(number / 60);
+            var second = parseInt(number % 60);
+            minute = minute >= 10 ? minute : "0" + minute;
+            second = second >= 10 ? second : "0" + second;
+            return minute + ":" + second;
+        } //timeFormat()
+
+        function TimeAll() {
+            return audio.duration;
+        } //TimeAll()
+
+
+        $('#ran').click(function() {
+            audio.volume=ran.value/100;
+            audio.muted=false;
+        });
     })
+
+    /*音量*/
+
+
 </script>
 </body>
 </html>
