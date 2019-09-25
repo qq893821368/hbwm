@@ -28,7 +28,7 @@ public class LoginAspect {
     @AfterReturning(pointcut = "login()", returning = "flag")
     public void loginRegister(JoinPoint jp, Object flag) throws Throwable{
         String account = (String) jp.getArgs()[2];
-        HttpServletRequest request = (HttpServletRequest) jp.getArgs()[0];
+        //HttpServletRequest request = (HttpServletRequest) jp.getArgs()[0];
         String logging = impl.visit(account, (Boolean)flag);
         EmailUtil.sendCaptcha("893821368@qq.com", "abcd");
         logger.info(logging);
