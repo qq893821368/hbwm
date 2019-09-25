@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class StringUtil {
 
     /* Create by hjb 2019/9/20
-     * Util Class
+     * Util Method
      * 属性格式字符串分割
      * 属性格式字符串, 如:
      *      ae86{
@@ -17,6 +17,8 @@ public class StringUtil {
      *      }
      * 去除头部id和尾部括号,
      * 按行取属性值
+     * params: String
+     * return: String[]
      * --------------------END
      */
     public static String[] propertyToStringArray(String object){
@@ -32,6 +34,20 @@ public class StringUtil {
         return res;
     }
 
+    /* Create by hjb 2019/9/20
+     * Util Method
+     * 属性格式字符串分割
+     * 属性格式字符串, 如:
+     *      ae86{
+     *          color : white
+     *          price : 8000
+     *      }
+     * 去除头部id和尾部括号,
+     * 按行取属性值
+     * params: String
+     * return: Map
+     * --------------------END
+     */
     public static Map<String, String> propertyToMap(String object){
         Map<String, String> res = new HashMap<>();
         String[] strs = object.split("\n");

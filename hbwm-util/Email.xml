@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <captcha-subject>【心随乐动】邮箱验证码</captcha-subject>
+    <captcha-head>【心随乐动】您的验证码为</captcha-head>
+    <captcha-foot>, 您正在进行身份验证, 请不要将验证码告诉其他人！</captcha-foot>
+    <captcha-sender>心随乐动</captcha-sender>
+
+    <email-admin>893821368@qq.com</email-admin>
+    <email-code>zolzulparalhbbhh</email-code>
+</config>
