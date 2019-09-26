@@ -30,7 +30,7 @@ public class LoginAspect {
         String account = (String) jp.getArgs()[2];
         //HttpServletRequest request = (HttpServletRequest) jp.getArgs()[0];
         String logging = impl.visit(account, (Boolean)flag);
-        EmailUtil.sendCaptcha("893821368@qq.com", "abcd");
+        EmailUtil.sendCaptcha("893821368@qq.com", "7zU9");
         logger.info(logging);
     }
 }

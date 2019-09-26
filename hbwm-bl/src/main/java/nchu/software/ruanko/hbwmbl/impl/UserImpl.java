@@ -15,15 +15,33 @@ import java.util.Map;
 @Service
 public class UserImpl {//登录、注册、找回密码、修改个人信息
     @Autowired
-    UserRepository userRepository;
+    UserRepository mapper;
 
+    /* Create by hjb 2019/9/21
+     * Logic Method
+     * 查询用户, 根据所给用户名查询用户存在性
+     * 存在则返回user.toString(), 否则返回提示
+     * params: String
+     * return: String
+     * --------------------END
+     */
     public String query(String account){
-        List<User> users = userRepository.findAll(account);
+        List<User> users = mapper.findAllByAccount(account);
         if(users.size() == 0)
             return "not found";
         return users.get(0).toString();
     }
 
+    /* Create by hjb 2019/9/21
+     * Logic Method
+     * 验证用户, 根据所给账户信息以及用户验证用户信息一致性
+     * 给定一组用户信息以及一个用户,
+     * 对用户信息和用户进行比对, 验证是否一致,
+     * 返回一个响应的提示作为验证结果
+     * params: String, String, String
+     * return: String
+     * --------------------END
+     */
     public String check(String account, String password, String user){
         if(user.equals("not found"))
             return "account not be found";
@@ -40,5 +58,21 @@ public class UserImpl {//登录、注册、找回密码、修改个人信息
                 return "access";
             }
         }
+    }
+
+    /* Create by hjb 2019/9/26
+     * Logic Method
+     * 录入用户
+     * 根据给定用户信息, 将信息存入数据库
+     * 返回一个提示作为录入结果
+     * params: String
+     * return: String
+     * --------------------END
+     */
+    public String register(String user){
+        Map<String, String> properties = StringUtil.propertyToMap(user);
+        int rows = mapper.addUser(properties.getOrDefault("account", null), properties.getOrDefault("password", null));
+
+        return rows + "be affected";
     }
 }
