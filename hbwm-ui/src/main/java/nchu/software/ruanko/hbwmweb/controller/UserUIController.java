@@ -1,5 +1,6 @@
 package nchu.software.ruanko.hbwmweb.controller;
 
+import nchu.software.ruanko.hbwmcommon.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,31 @@ public class UserUIController {
         return "login";
     }
 
+    @RequestMapping("/register")
+    public void register(HttpServletRequest request, HttpServletResponse response, User registrant, Model model) throws IOException, ServletException {
+        String msg = null;
+        try{
+            msg = (String) request.getSession().getAttribute("msg");
+        }catch (NullPointerException NPE){
+            msg = null;
+        }finally {
+            request.getSession().removeAttribute("msg");
+        }
+        if(msg != null){
+            if(msg.equals("success")){
+                request.getSession().setAttribute("user", registrant.getAccount());
+                response.sendRedirect("/home");
+            }
+            else {
+                request.getSession().setAttribute("message", msg);
+                response.sendRedirect("/register");
+            }
+            return ;
+        }
+        request.getRequestDispatcher("/registerImpl").forward(request, response);
+        return ;
+    }
+
     @RequestMapping("/verify")
     public void verify(HttpServletRequest request, HttpServletResponse response, String account, String password, Model model) throws IOException, ServletException {
         String msg = null;
@@ -32,6 +58,7 @@ public class UserUIController {
         }finally {
             request.getSession().removeAttribute("msg");
         }
+        System.out.println(msg);
         if(msg != null) {
             if (msg.equals("access")) {
                 request.getSession().setAttribute("user", account);

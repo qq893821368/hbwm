@@ -1,6 +1,7 @@
 package nchu.software.ruanko.hbwmbl.controller;
 
 import nchu.software.ruanko.hbwmbl.impl.UserImpl;
+import nchu.software.ruanko.hbwmcommon.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -52,5 +53,19 @@ public class UserController {
         return false;
     }
 
-
+    @RequestMapping("/registerImpl")
+    @ResponseBody
+    public Boolean register(HttpServletRequest request, HttpServletResponse response, User registrant, Model model) throws IOException, ServletException {
+        String user = impl.query(registrant.getAccount());
+        String message;
+        if(!user.equals("not found"))
+            message = "Account already exist";
+        else
+            message = impl.register(registrant);
+        request.getSession().setAttribute("msg", message);
+        request.getRequestDispatcher("/register").forward(request, response);
+        if(message.equals("success"))
+            return true;
+        return false;
+    }
 }

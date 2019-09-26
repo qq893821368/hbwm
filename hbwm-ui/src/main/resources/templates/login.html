@@ -9,14 +9,12 @@
         <link rel="stylesheet" type="text/css" href="layui/css/layui.css" media="all" charset="utf-8">
         <link rel="stylesheet" type="text/css" href="layui/css/admin.css" media="all" charset="utf-8">
         <link rel="stylesheet" type="text/css" href="layui/css/login.css" media="all" charset="utf-8">
+
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" charset="utf-8">
 
-        <script src="layui/jquery.js"/>
-        <script>
-            $(document).click(function () {
-                $("#message").text("");
-            })
-        </script>
+        <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="layui/jquery.js"></script>
     </head>
 
     <body>
@@ -63,7 +61,7 @@
                             <a href="javascript:;"><i class="layui-icon layui-icon-login-qq"></i></a>
                             <a href="javascript:;"><i class="layui-icon layui-icon-login-wechat"></i></a>
                             <a href="javascript:;"><i class="layui-icon layui-icon-cellphone"></i></a>
-                            <a href="reg.html" class="layadmin-user-jump-change layadmin-link">注册帐号</a>
+                            <a th:replace="fragments/register::body"></a>
                         </div>
                     </div>
                 </div>
