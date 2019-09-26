@@ -148,6 +148,7 @@
     <!--播放按钮-->
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.10.0/jquery.min.js"></script>
     <!--layui的table col操作列自定义的模板 您可以根据自己的实际情况改动-->
+    <script type="text/javascript" src="/jquery/jquery.js"></script>
     <script type="text/html" id="tableToolbar">
         <div class="layui-inline" lay-event="add"><i class="layui-icon layui-icon-add-1"></i></div>
         <div class="layui-inline" lay-event="update"><i class="layui-icon layui-icon-edit"></i></div>
@@ -245,6 +246,7 @@
 </div>
 
 <script>
+
     //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
     layui.use('element', function(){
         var element = layui.element;
@@ -259,6 +261,13 @@
 
 <!--播放器-->
 <script type="text/javascript">
+    $(document).ready(function(){
+
+        lrcJSON=$.ajax({url:"/music/lyric/童言无忌.txt",async:false});
+
+
+
+    });
     $(function(){
         //播放完毕
         $('#mp3Btn').on('ended', function() {
@@ -393,28 +402,33 @@
 
         };*/
 
-        $(document).ready(function(){
-            $("#mp3Btn").click(function(){
-                lrcJSON=$.ajax({url:"/music/lyric/童言无忌.txt",async:false}); //获取test1.txt内容并赋值
-                $("#lrc").html(lrcJSON.responseText);
-            });
 
-        });
         function parseLyric(text) {
-            lyric = text.split('\r\n'); //先按行分割
+            lyric = text.split("\\n"); //先按行分割
             var _l = lyric.length; //获取歌词行数
             lrc = new Array(); //新建一个数组存放最后结果
+
             for (i = 0; i < _l; i++) {
-                var d = lyric[i].match(/\[\d{2}:\d{2}((\.|\:)\d{2})\]/g);  //正则匹配播放时间
+                var d = lyric[i].match(/\[\d{2}:\d{2}\.\d{3}\]/g);  //正则匹配播放时间
+
                 var t = lyric[i].split(d); //以时间为分割点分割每行歌词，数组最后一个为歌词正文
-                if (d != null) { //过滤掉空行等非歌词正文部分
+
+                if (d != null) {
+                    lrc.push(d,t);
+                }
+                alert(lrc);
+/*
+               if (d != null) { //过滤掉空行等非歌词正文部分
                     //换算时间，保留两位小数
                     var dt = String(d).split(':');
                     var _t = Math.round(parseInt(dt[0].split('[')[1]) * 60 + parseFloat(dt[1].split(']')[0]) * 100) / 100;
+
                     lrc.push([_t, t[1]]);
-                }
-                return lrc;
+                }*/
+
+
             }
+            return lrc;
         }
 
 
@@ -430,7 +444,7 @@
 
             lrcTime[i++] = parseFloat(key.substr(1,3)) * 60 + parseFloat(key.substring(4,10));//00:00.000转化为00.000格式
 
-            ul.innerHTML += "<li><p>"+lrcJSON[key]+"</p></li>";//ul里填充歌词
+            ul.innerHTML += "<li><p>"+lrc[key]+"</p></li>";//ul里填充歌词
 
         });
 
