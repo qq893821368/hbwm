@@ -112,7 +112,9 @@
 
         li.on{
 
-            color: red;
+            color: #198f53;
+            font-size: 20px;
+
 
         }
 
@@ -122,9 +124,9 @@
 
             text-overflow: ellipsis;
 
-            height: 16px;
+            height: 20px;
 
-            line-height: 16px;
+            line-height: 20px;
 
             -webkit-line-clamp: 1;
 
@@ -209,7 +211,7 @@
                     <!--上一曲-->
                     <div class="layui-col-md4 layui-col-lg4"><img src="/images.icon/left-circle.png" height="50" width="50"/></div>
                     <!--播放暂停-->
-                    <div class="layui-col-md4 layui-col-lg4"><div class="btn-audio"><audio id="mp3Btn"><source src="/music/童言无忌.mp3" type="audio/mpeg" /></audio></div></div>
+                    <div class="layui-col-md4 layui-col-lg4"><div class="btn-audio"><audio id="mp3Btn"><source src="/music/周杰伦 - 说好不哭（with 五月天阿信）.flac" type="audio/mpeg" /></audio></div></div>
                     <!--下一曲-->
                     <div class="layui-col-md4 layui-col-lg4"><img src="/images.icon/right-circle.png" height="50" width="50"/></div>
                 </div>
@@ -263,7 +265,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
 
-        lrcJSON=$.ajax({url:"/music/lyric/童言无忌.txt",async:false});
+        lrcTXT=$.ajax({url:"/music/lyric/周杰伦 - 说好不哭（with 五月天阿信）.txt",async:false});
 
 
 
@@ -323,112 +325,32 @@
         });
 
 /*歌词*/
-
-        /*var lrcJSON = {
-
-            "[00:06.810]":"06",
-
-            "[00:08.040]":"08",
-
-            "[00:09.710]":"09",
-
-            "[00:10.410]":"10",
-
-            "[00:16.150]":"16",
-
-            "[00:20.780]":"20",
-
-            "[00:25.480]":"25",
-
-            "[00:57.030]":"悲しみに手を振るんでしょう",
-
-            "[01:01.190]":"そしていつか 空っぽのままの心に灯りをともすように",
-
-            "[01:08.630]":"とぎれとぎれの 言葉を探して繋ぎ止めた",
-
-            "[01:14.390]":"それでもたった二人の世界は続いて行くんだ",
-
-            "[01:20.190]":"空に祈るように どうか永遠に",
-
-            "[01:29.380]":"",
-
-            "[01:43.670]":"白・黒・壱・零 僕らは選ぶ事を迫られてばかり",
-
-            "[01:54.940]":"そうして残った大事な物を壊れるほど抱きしめていた",
-
-            "[02:06.670]":"",
-
-            "[02:07.670]":"明け方過ぎの光の先に",
-
-            "[02:13.530]":"ほんの少しだけ未来が見えた気がして",
-
-            "[02:18.110]":"",
-
-            "[02:18.810]":"バカげた夢だってきっと願い続けるから",
-
-            "[02:24.330]":"奇跡に近づくんでしょう",
-
-            "[02:28.590]":"それは君の弱さの隣に見つけた強さの欠片だって",
-
-            "[02:36.160]":"とぎれとぎれの 言葉を探して繋ぎ止めた",
-
-            "[02:41.700]":"瞼の奥に滲んだ世界を守ってゆくんだ",
-
-            "[02:47.470]":"空に祈るように 君と誓う明日",
-
-            "[02:58.720]":"",
-
-            "[03:08.900]":"不自由な思いが重なり合ったら",
-
-            "[03:14.390]":"そうさ誰より自由になれた",
-
-            "[03:20.390]":"足りないものを埋め合うように",
-
-            "[03:25.700]":"疑いもせず 支えあいながら",
-
-            "[03:31.610]":"",
-
-            "[03:34.060]":"サヨナラ 僕らはきっと生まれ変われるから",
-
-            "[03:39.490]":"悲しみに手を振るんでしょう",
-
-            "[03:44.450]":"そしていつか 空っぽのままの心に灯りをともすように",
-
-            "[03:51.620]":"とぎれとぎれの 言葉を探して繋ぎ止めた",
-
-            "[03:57.190]":"それでもたった二人の世界は続いて行くんだ",
-
-            "[04:03.000]":"空に祈るように どうか永遠に…"
-
-        };*/
-
-
         function parseLyric(text) {
-            lyric = text.split("\\n"); //先按行分割
+            lyric = text.split("\n"); //先按行分割
             var _l = lyric.length; //获取歌词行数
+            alert(_l)
             lrc = new Array(); //新建一个数组存放最后结果
-
+            var lrcJSON = "{";
             for (i = 0; i < _l; i++) {
-                var d = lyric[i].match(/\[\d{2}:\d{2}\.\d{3}\]/g);  //正则匹配播放时间
+                var d = lyric[i].match(/\[\d{2}:\d{2}\.\d{2}\]/g);  //正则匹配播放时间
 
                 var t = lyric[i].split(d); //以时间为分割点分割每行歌词，数组最后一个为歌词正文
 
-                if (d != null) {
-                    lrc.push(d,t);
-                }
-                alert(lrc);
-/*
                if (d != null) { //过滤掉空行等非歌词正文部分
                     //换算时间，保留两位小数
-                    var dt = String(d).split(':');
-                    var _t = Math.round(parseInt(dt[0].split('[')[1]) * 60 + parseFloat(dt[1].split(']')[0]) * 100) / 100;
+                   // var dt = String(d).split(':');
+                   // var _t = Math.round(parseInt(dt[0].split('[')[1]) * 60 + parseFloat(dt[1].split(']')[0]) * 100) / 100;
 
-                    lrc.push([_t, t[1]]);
-                }*/
+                    lrc.push([d, t[1]]);
+                    lrcJSON = lrcJSON + "\"" + d + "\":\"" + t[1] + "\",\n";
+                }
 
 
             }
-            return lrc;
+            lrcJSON=lrcJSON+"}";
+            var obj = eval ("(" + lrcJSON + ")");
+
+            return obj;
         }
 
 
@@ -438,21 +360,20 @@
 
 
 
-        var i = 0;
+        var k = 0;
 
-        $.each(parseLyric(lrcJSON), function(key, value) {//遍历lrc
+        $.each(parseLyric(lrcTXT.responseText), function(key, value) {//遍历lrc
 
-            lrcTime[i++] = parseFloat(key.substr(1,3)) * 60 + parseFloat(key.substring(4,10));//00:00.000转化为00.000格式
+            lrcTime[k++] = parseFloat(key.substr(1,3)) * 60 + parseFloat(key.substring(4,10));//00:00.000转化为00.000格式
+            ul.innerHTML += "<li><p>"+value+"</p></li>";//ul里填充歌词
 
-            ul.innerHTML += "<li><p>"+lrc[key]+"</p></li>";//ul里填充歌词
 
         });
 
         lrcTime[lrcTime.length] = lrcTime[lrcTime.length-1] + 3;//如不另加一个结束时间，到最后歌词滚动不到最后一句
 
 
-
-
+        
 
         var $li = $("#lrclist>li");//获取所有li
 
@@ -478,7 +399,7 @@
 
                     currentLine =  j;
 
-                    ppxx = 140-(currentLine*32);
+                    ppxx = 140-(currentLine*36);
 
                     ul.style.transform = "translateY("+ppxx+"px)";
 
