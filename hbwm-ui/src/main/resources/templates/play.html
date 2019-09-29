@@ -41,7 +41,7 @@
             float: right;
             font-family: cursive,microsoft Yahei;
             font-size: 14px;
-            color: #a5a5a5;
+            color: #343434;
         }
 
         .Process{
@@ -65,7 +65,7 @@
 
 
         /*音量条*/
-        input[type="range"] {
+         .voiceran{
             /*-webkit-box-shadow: 0 1px 0 0px #424242, 0 1px 0 #060607 inset, 0px 2px 10px 0px black inset, 1px 0px 2px rgba(0, 0, 0, 0.4) inset, 0 0px 1px rgba(0, 0, 0, 0.6) inset;*/
             -webkit-appearance: none; /*去除默认样式*/
             margin-top: 25px;
@@ -79,7 +79,7 @@
 
             /*input的长度为80%，margin-left的长度为10%*/
         }
-        input[type="range"]::-webkit-slider-thumb {
+        .voiceran::-webkit-slider-thumb{
             -webkit-appearance: none;/*去除默认样式*/
             cursor: default;
             top: 0;
@@ -162,12 +162,12 @@
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
 </head>
-<body style="background-color:#ffffff;" >
+<body style="background-color:#ffffff" >
 
 
 <div class="layui-fluid" style="margin-right: 250px; margin-left: 250px;">
     <div id="Layer1" class="blur" style="position:absolute; width:100%; height:100%; z-index:-1">
-        <img src="/images.music/playpic.jpg" height="1000" width="1000"/>
+        <img src="/images.music/playpic.jpg" height="100%" width="100%"/>
     </div>
     <div class="layui-row">
         <div class="layui-row">
@@ -192,11 +192,11 @@
                 <a>周杰伦</a>
             </div>
             <!--歌词-->
-            <div class="layui-col-md6 layui-col-lg6" align="center" style="padding: 100px">
+            <div class="layui-col-md6 layui-col-lg6" align="center" style="padding: 100px 0px 100px">
                 <h1 style="float: left">说好不哭</h1>
                 <br><br>
                 <hr class="layui-bg-green">
-                <div id="lrc" style="height: 300px;overflow-y:scroll;">
+                <div id="lrc" style="height: 300px;overflow: hidden;">
                     <ul id="lrclist" style="transform: translateY(140px);"><!-- 保证歌词在正中间 -->
 
                     </ul>
@@ -205,15 +205,15 @@
             </div>
 
         </div>
-        <div class="layui-row">
+        <div class="layui-row" style="margin-top: 50px">
             <div class="layui-col-md3 layui-col-lg3">
                 <div class="layui-row">
                     <!--上一曲-->
-                    <div class="layui-col-md4 layui-col-lg4"><img src="/images.icon/left-circle.png" height="50" width="50"/></div>
+                    <div class="layui-col-md4 layui-col-lg4" style="margin-top: 5px"><img src="/images.icon/left-circle.png" height="50" width="50"/></div>
                     <!--播放暂停-->
                     <div class="layui-col-md4 layui-col-lg4"><div class="btn-audio"><audio id="mp3Btn"><source src="/music/周杰伦 - 说好不哭（with 五月天阿信）.flac" type="audio/mpeg" /></audio></div></div>
                     <!--下一曲-->
-                    <div class="layui-col-md4 layui-col-lg4"><img src="/images.icon/right-circle.png" height="50" width="50"/></div>
+                    <div class="layui-col-md4 layui-col-lg4" style="margin-top: 5px"><img src="/images.icon/right-circle.png" height="50" width="50"/></div>
                 </div>
 
 
@@ -222,10 +222,12 @@
             <!--进度条-->
             <div class="layui-col-md6 layui-col-lg6">
                 <div class="Process"> <!-- Process -->
-                <div class="ProcessAll" ></div> <!-- ProcessAll -->
-                <div class="ProcessNow"></div> <!-- ProcessNow -->
-                <div class="SongTime">00:00&nbsp;/&nbsp;00:00</div> <!-- Time -->
-            </div> <!-- Process End --></div>
+                    <div class="ProcessAll"></div><!-- ProcessAll -->
+                    <div class="ProcessNow"></div> <!-- ProcessNow -->
+                    <div class="SongTime" style="margin-top: -5px">00:00&nbsp;/&nbsp;00:00</div> <!-- Time -->
+                </div>
+                <!-- Process End -->
+            </div>
             <!--控件-->
             <div class="layui-col-md3 layui-col-lg3">
                 <div class="layui-row">
@@ -233,7 +235,7 @@
                         <i class="layui-icon layui-icon-voice" style="width: 10px;"></i>
                     </div>
                     <div class="layui-col-md3 layui-col-lg3">
-                        <input type="range" min="0" max="100" value="50" id="ran"/>
+                        <input type="range" class="voiceran" min="0" max="100" value="50" id="ran"/>
                     </div>
                 </div>
             </div>
@@ -297,13 +299,14 @@
 
         function TimeSpan() {
             var ProcessNow = 0;
+
             setInterval(function () {
                 var ProcessNow = (audio.currentTime / audio.duration) * 400;
                 $(".ProcessNow").css("width", ProcessNow);
                 var currentTime = timeFormat(audio.currentTime);
                 var timeAll = timeFormat(TimeAll());
-                $(".SongTime").html(currentTime + " | " + timeAll);
-            }, 1000);
+                $(".SongTime").html(currentTime + " / " + timeAll);
+            }, 10);
         }  //TimeSpan()
 
         function timeFormat(number) {
@@ -318,17 +321,25 @@
             return audio.duration;
         } //TimeAll()
 
-
+        /*音量*/
         $('#ran').click(function() {
             audio.volume=ran.value/100;
             audio.muted=false;
         });
 
+        /*进度条控制*/
+
+        $('.Process').click(function (event) {
+            var pagex = event.pageX;
+            var prox = $('.Process').offset().left;
+            var processPercent = (pagex-prox)/400;/*根据点击位置的位置x减进度条左边位置x除长度400得到百分比*/
+            $li.get(currentLine).className="";
+            audio.currentTime = audio.duration*processPercent;
+        })
 /*歌词*/
         function parseLyric(text) {
             lyric = text.split("\n"); //先按行分割
             var _l = lyric.length; //获取歌词行数
-            alert(_l)
             lrc = new Array(); //新建一个数组存放最后结果
             var lrcJSON = "{";
             for (i = 0; i < _l; i++) {
@@ -400,7 +411,7 @@
                     currentLine =  j;
 
                     ppxx = 140-(currentLine*36);
-
+                    ul.style.transform = "translateY(0px)";//回到顶部加载显示之前超出窗口的歌词
                     ul.style.transform = "translateY("+ppxx+"px)";
 
                     $li.get(currentLine-1).className="";
@@ -430,9 +441,8 @@
             for (k=0, len=lrcTime.length; k<len; k++){
 
                 if (currentTime<lrcTime[k+1] && currentTime<lrcTime[k]){
-
                     currentLine =  k;
-
+                    $li.get(currentLine).className="on";
                     break;
 
                 }
@@ -443,7 +453,7 @@
 
     })
 
-    /*音量*/
+
 
 
 </script>

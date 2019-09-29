@@ -1,17 +1,152 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <script type="text/javascript" src="/jquery/jquery.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>模板页</title>
+    <style>
+        header{
+            position: relative;height:200px;background: pink;padding-top:0.1rem;text-align: center;
+        }
+        header .money{
+            position: absolute;top:0;right:0;width:100px;height:30px;background: skyblue;text-align: center;line-height: 30px;
+        }
+        header img{
+            width:50px;margin:0 auto;border-radius: 50%;
+        }
 
-            htmlobj=$.ajax({url:"/music/lyric/童言无忌.txt",async:false});
-            alert(htmlobj.responseText);
-
-        });
-    </script>
+        #audio-box{
+            padding-top:20px;position:relative;height:100px;
+        }
+        #box{
+            width:calc(100% - 20px);height:5px;background: #ccc;position:relative;margin: 0 auto;
+        }
+        #strip{
+            width:0;height:5px;background:red;
+        }
+        #circular{
+            width:20px;height:20px;background:skyblue;position:absolute;top:50%;left:0;border-radius: 50%;margin-top:-10px;
+        }
+        .time{
+            position:absolute;right:0;top:0.15rem;
+        }
+        #play{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-
-
+<div id="app">
+    <section>
+        <div><h6>【第01讲】小儿发烧在家如何做物理降温小儿发烧在家如何做物理降温</h6></div>
+        <div id="audio-box">
+            <div id="box">
+                <div id="strip"></div>
+                <div id="circular"></div>
+                <div class="time">{{voteTime | analysisTime}}</div>
+            </div>
+        </div>
+        <div id="play">
+            <img src="" alt="">
+            播放
+        </div>
+        <h5 style="text-align: center">200人收听</h5>
+        <div>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </section>
+    <audio autobuffer id="audio">
+        <source src="**放音频文件**">
+    </audio>
+</div>
 </body>
+<script src="../js/vue.min.js"></script>
+<script>
+    Vue.filter('analysisTime', function (value) {
+        return Math.floor(value/60)+'′'+Math.floor(value%60)+'″';
+    })
+    var vm = new Vue({
+        el: '#app',
+        created(){
+            window.onload=function(){
+                var oAudio=document.querySelector('#audio');
+                var oDiv1=document.querySelector('#box');
+                var oDiv2=document.querySelector('#strip');
+                var oDiv3=document.querySelector('#circular');
+                var oPlay=document.querySelector('#play');
+                var timer='';
+                vm.voteTime = oAudio.duration;
+                oPlay.onclick=function(){
+                    if(oAudio.paused){
+                        oAudio.play();
+                        oPlay.innerHTML='暂停'
+                        timer=setInterval(function(){
+                            playAudio(oAudio.currentTime/oAudio.duration)
+                            vm.voteTime = oAudio.duration-oAudio.currentTime;
+                        }, 100)
+                    }else{
+                        oAudio.pause();
+                        oPlay.innerHTML='播放'
+                        clearInterval(timer)
+                    }
+
+
+                }
+                function playAudio(iNow){
+                    oDiv2.style.width=iNow*100+'%';
+                    oDiv3.style.left=iNow*100+'%';
+                }
+
+                oDiv3.addEventListener('touchstart',function(ev){
+                    clearInterval(timer)
+                    var oDiv1W = oDiv1.offsetWidth;
+                    var oldX = ev.targetTouches[0].clientX - oDiv3.offsetLeft;
+
+                    document.addEventListener('touchmove',fnMove,false)
+                    document.addEventListener('touchend',fnEnd,false)
+                    function fnMove(ev){
+
+                        var x = ev.targetTouches[0].clientX - oldX;
+                        if(x>=oDiv1W){
+                            x=oDiv1W;
+                        }else if(x<=0){
+                            x=0;
+                        }
+                        oDiv3.style.left=x+'px';
+                        oDiv2.style.width=x+'px';
+
+                    }
+                    function fnEnd(ev){
+                        document.removeEventListener('touchend',fnEnd,false)
+                        document.removeEventListener('touchmove',fnMove,false)
+                        var newX = ev.changedTouches[0].clientX;
+                        var oDiv2W = oDiv2.offsetWidth;
+                        var oDuration = oDiv2W/oDiv1W;
+                        clearInterval(timer)
+
+                        oAudio.currentTime=oDuration*oAudio.duration;
+                        timer=setInterval(function(){
+                            playAudio(oAudio.currentTime/oAudio.duration)
+                            vm.voteTime = oAudio.duration-oAudio.currentTime;
+                        }, 100)
+                        if(oAudio.paused){
+                            vm.voteTime = oAudio.duration-oAudio.currentTime;
+                            clearInterval(timer)
+                        }
+                    }
+                },false);
+            }
+        },
+        data: {
+            msg:'模板页',
+            voteTime:0
+        },
+        methods: {
+
+        }
+    })
+</script>
 </html>
