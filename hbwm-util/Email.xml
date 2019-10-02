@@ -5,6 +5,9 @@
     <captcha-foot>, 您正在进行身份验证, 请不要将验证码告诉其他人！</captcha-foot>
     <captcha-sender>心随乐动</captcha-sender>
 
-    <email-admin>893821368@qq.com</email-admin>
-    <email-code>zolzulparalhbbhh</email-code>
+    <email-admin>1302342843@qq.com</email-admin>
+    <!--<email-code>zolzulparalhbbhh</email-code>-->
+    <email-code>axselfpinbosifcc</email-code>
+    <host-name>smtp.qq.com</host-name>
+    <char-set>utf-8</char-set>
 </config>

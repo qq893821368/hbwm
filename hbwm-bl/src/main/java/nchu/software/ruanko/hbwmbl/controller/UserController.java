@@ -1,7 +1,12 @@
 package nchu.software.ruanko.hbwmbl.controller;
 
+import com.aliyuncs.exceptions.ClientException;
 import nchu.software.ruanko.hbwmbl.impl.UserImpl;
 import nchu.software.ruanko.hbwmcommon.model.User;
+import nchu.software.ruanko.hbwmutil.util.EmailUtil;
+import nchu.software.ruanko.hbwmutil.util.MessageUtil;
+import nchu.software.ruanko.hbwmutil.util.StringUtil;
+import org.apache.commons.mail.EmailException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -67,5 +72,18 @@ public class UserController {
         if(message.equals("success"))
             return true;
         return false;
+    }
+
+    @ResponseBody
+    @RequestMapping("/sendCode")
+    public String sendCode(HttpServletRequest request, HttpServletResponse response, String addressee, boolean isPhone) throws EmailException, ClientException {
+        String captcha = StringUtil.random(true, 6);
+        System.out.println("addressee="+addressee+", isPhone="+isPhone);
+        if(isPhone)
+            MessageUtil.sendMessage(addressee, captcha);
+        else
+            EmailUtil.sendCaptcha(addressee, captcha);
+        request.getSession().setAttribute("captcha", captcha);
+        return captcha;
     }
 }

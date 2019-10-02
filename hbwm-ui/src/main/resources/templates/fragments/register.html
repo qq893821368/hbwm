@@ -13,10 +13,9 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title" id="myModalLabel">
-                    心随乐动
                 </h4>
             </div>
-            <form>
+            <form id="register-form">
                 <div class="modal-body">
                     <div class="layadmin-user-login-main">
                         <div class="layadmin-user-login-box layadmin-user-login-header">
@@ -25,32 +24,32 @@
                         </div>
                         <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
                             <div class="layui-form-item">
-                                <label class="layadmin-user-login-icon layui-icon layui-icon-cellphone" for="LAY-user-login-cellphone"></label>
-                                <input type="text" name="acc" id="LAY-user-login-cellphone" lay-verify="phone" placeholder="手机或邮箱" class="layui-input">
+                                <label class="layadmin-user-login-icon layui-icon layui-icon-cellphone" style="position: absolute" for="register-addressee"></label>
+                                <input type="text" name="acc" id="register-addressee" lay-verify="phone" placeholder="手机或邮箱" class="layui-input">
                             </div>
                             <div class="layui-form-item">
                                 <div class="layui-row">
                                     <div class="layui-col-xs7">
-                                        <label class="layadmin-user-login-icon layui-icon layui-icon-vercode" for="LAY-user-login-vercode"></label>
+                                        <label class="layadmin-user-login-icon layui-icon layui-icon-vercode" style="position: absolute" for="LAY-user-login-vercode"></label>
                                         <input type="text" name="vercode" id="LAY-user-login-vercode" lay-verify="required" placeholder="验证码" class="layui-input">
                                     </div>
                                     <div class="layui-col-xs5">
                                         <div style="margin-left: 10px;">
-                                            <button type="button" class="layui-btn layui-btn-primary layui-btn-fluid" id="LAY-user-getsmscode">获取验证码</button>
+                                            <button type="button" class="layui-btn layui-btn-primary layui-btn-fluid" id="register-get-code">获取验证码</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="layui-form-item">
-                                <label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-password"></label>
+                                <label class="layadmin-user-login-icon layui-icon layui-icon-password" style="position: absolute" for="LAY-user-login-password"></label>
                                 <input type="password" name="psd" id="LAY-user-login-password" lay-verify="pass" placeholder="密码" class="layui-input">
                             </div>
                             <div class="layui-form-item">
-                                <label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-repass"></label>
+                                <label class="layadmin-user-login-icon layui-icon layui-icon-password" style="position: absolute" for="LAY-user-login-repass"></label>
                                 <input type="password" name="repsd" id="LAY-user-login-repass" lay-verify="required" placeholder="确认密码" class="layui-input">
                             </div>
                             <div class="layui-form-item">
-                                <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-reg-submit">注 册</button>
+                                <button class="layui-btn layui-btn-fluid" lay-filter="LAY-user-reg-submit" id="register-submit">注 册</button>
                             </div>
                             <div class="layui-trans layui-form-item layadmin-user-login-other">
                                 <label>社交账号注册</label>

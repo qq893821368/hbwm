@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <region-id>cn-hangzhou</region-id>
+    <domain>dysmsapi.aliyuncs.com</domain>
+    <access-key-id>LTAI4FfRb69iDgNEeDhzLCg6</access-key-id>
+    <secret>2lr3WcNZ7Tck7Z6m6lov1wMFvVRZwX</secret>
+
+    <signName>心随乐动</signName>
+    <template-code>SMS_174271097</template-code>
+</config>

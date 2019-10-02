@@ -20,7 +20,7 @@ public class WebConfig implements WebMvcConfigurer  {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        String[] loginPage = {"/verify", "/verifyImpl", "/login", "/bootstrap/**", "/layui/**", "/register"};
+        String[] loginPage = {"/verify", "/verifyImpl", "/login", "/bootstrap/**", "/layui/**", "/register", "/sendCode"};
         String[] antiLoginPage = {"/login"};
 
         registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns(loginPage);

@@ -12,8 +12,8 @@ public class EmailUtil {
         if(email==null){
             //email=SpringUtil.getBean(HtmlEmail.class);
             email = new HtmlEmail();//创建http email对象, 用以完成email功能
-            email.setHostName("smtp.qq.com");                           //设置服务器
-            email.setCharset("utf-8");                                  //设置发送邮件编码
+            email.setHostName(XMLUtil.getProperty(xml, "host-name"));                           //设置服务器
+            email.setCharset(XMLUtil.getProperty(xml, "char-set"));                                  //设置发送邮件编码
             email.setAuthentication(XMLUtil.getProperty(xml, "email-admin"), XMLUtil.getProperty(xml, "email-code"));//设置授权
         }
     }

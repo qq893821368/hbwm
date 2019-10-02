@@ -1,5 +1,6 @@
 package nchu.software.ruanko.hbwmweb.controller;
 
+import nchu.software.ruanko.hbwmbl.impl.UserImpl;
 import nchu.software.ruanko.hbwmcommon.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -58,7 +59,6 @@ public class UserUIController {
         }finally {
             request.getSession().removeAttribute("msg");
         }
-        System.out.println(msg);
         if(msg != null) {
             if (msg.equals("access")) {
                 request.getSession().setAttribute("user", account);

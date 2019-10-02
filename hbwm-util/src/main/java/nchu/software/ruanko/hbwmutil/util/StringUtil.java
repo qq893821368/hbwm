@@ -7,6 +7,45 @@ import java.util.regex.Pattern;
 
 public class StringUtil {
 
+    /* Create by hjb 2019/9/30
+     * Util Method
+     * 随机字符串
+     * 给定一个长度以及是否纯数字的标识,
+     * 返回一个符合条件的随机字符串
+     * params: boolean, int
+     * return: String
+     * --------------------END
+     */
+    public static String random(boolean isPureNumber, int length){
+        String code = "";
+        if (isPureNumber)
+            for(int i=0; i<length; i++)
+                code += (char)((int)(10*Math.random()+48));
+        else
+            for (int i=0; i<length; i++)
+                if(Math.random()> 0.5)
+                    code += (char)((int)(10*Math.random()+48));
+                else
+                    code += (char)((int)(26*Math.random()+97));
+        return code;
+    }
+
+    /* Create by hjb 2019/9/29
+     * Util Method
+     * 空字符串判断
+     * 根据给定字符串判断是否为空(null, "")
+     * params: String
+     * return: boolean
+     * --------------------END
+     */
+    public static boolean isEmpty(String string){
+        if(string == null)
+            return true;
+        else if(string.equals(""))
+            return true;
+        return false;
+    }
+
     /* Create by hjb 2019/9/20
      * Util Method
      * 属性格式字符串分割
