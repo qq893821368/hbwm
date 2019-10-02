@@ -8,12 +8,12 @@ import org.springframework.web.servlet.ModelAndView;
 @ComponentScan("nchu.software.ruanko.hbwmui")
 @ControllerAdvice
 public class ExceptionUtil {
-    @ExceptionHandler()
+    /*@ExceptionHandler()
     public ModelAndView IllegalArgumentExceptionHnadler(IllegalArgumentException exception){
         ModelAndView modelAndView = new ModelAndView("illegalArgument");
         modelAndView.addObject("errCoz",exception.getCause());
         modelAndView.addObject("errMsg",exception.getMessage());
         return modelAndView;
-    }
+    }*/
 
 }

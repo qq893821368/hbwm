@@ -1,6 +1,8 @@
 package nchu.software.ruanko.hbwmweb.controller;
 
+import nchu.software.ruanko.hbwmbl.impl.DataAnalyzeImpl;
 import nchu.software.ruanko.hbwmbl.impl.UserImpl;
+import nchu.software.ruanko.hbwmcommon.model.Music;
 import nchu.software.ruanko.hbwmcommon.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,11 +13,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 @Controller
 public class UserUIController {
     @GetMapping("/login")
-    public String login(HttpServletRequest request, HttpServletResponse response){
+    public String login(HttpServletRequest request, HttpServletResponse response) throws InvocationTargetException, NoSuchMethodException, NoSuchFieldException, IllegalAccessException {
         String msg = null;
         if((msg = (String) request.getSession().getAttribute("msg")) != null)
             if(msg.equals("access")){

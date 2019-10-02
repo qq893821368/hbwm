@@ -53,10 +53,10 @@ public class DataAnalyzeImpl {
             String argName = arg.toLowerCase();
             String getter = "get" + argName.substring(0, 1).toUpperCase() + argName.substring(1);
             Method method = Music.class.getMethod(getter, new Class[] {});
-            double differ = (double)method.invoke(musicA, new Object()) - (double)method.invoke(musicB, new Object());
+            double differ = (int)method.invoke(musicA) - (int)method.invoke(musicB);
             dis += differ * differ;
         }
         dis = Math.sqrt(dis);
-        return 0;
+        return dis;
     }
 }
