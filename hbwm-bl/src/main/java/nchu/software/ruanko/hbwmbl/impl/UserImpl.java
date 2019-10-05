@@ -1,8 +1,12 @@
 package nchu.software.ruanko.hbwmbl.impl;
 
+import com.aliyuncs.exceptions.ClientException;
 import nchu.software.ruanko.hbwmcommon.model.User;
 import nchu.software.ruanko.hbwmda.repository.UserRepository;
+import nchu.software.ruanko.hbwmutil.util.EmailUtil;
+import nchu.software.ruanko.hbwmutil.util.MessageUtil;
 import nchu.software.ruanko.hbwmutil.util.StringUtil;
+import org.apache.commons.mail.EmailException;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,6 +20,34 @@ import java.util.Map;
 public class UserImpl {//登录、注册、找回密码、修改个人信息
     @Autowired
     UserRepository mapper;
+
+    /* Create by hjb 2019/10/05
+     * Logic Method
+     * 发送验证码
+     * 根据指定的接收者, 是否为手机号, 验证码, 发送一个验证码
+     * params: String, boolean, String
+     * return: boolean
+     * --------------------END
+     */
+    public boolean sendCaptcha(String addressee, boolean isPhone, String captcha) throws ClientException, EmailException {
+        if (isPhone)
+            MessageUtil.sendMessage(addressee, captcha);
+        else
+            EmailUtil.sendCaptcha(addressee, captcha);
+        return true;
+    }
+
+    /* Create by hjb 2019/10/05
+     * Administrate Method
+     * 生成验证码
+     * 根据是否纯数字, 长度生成一个验证码
+     * params: boolean, int
+     * return: String
+     * --------------------END
+     */
+    public String createCaptcha(boolean isPureNumber, int length){
+        return StringUtil.random(isPureNumber, length);
+    }
 
     /* Create by hjb 2019/9/21
      * Logic Method

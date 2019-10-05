@@ -77,13 +77,14 @@ public class UserController {
     @ResponseBody
     @RequestMapping("/sendCode")
     public String sendCode(HttpServletRequest request, HttpServletResponse response, String addressee, boolean isPhone) throws EmailException, ClientException {
-        String captcha = StringUtil.random(true, 6);
-        System.out.println("addressee="+addressee+", isPhone="+isPhone);
-        if(isPhone)
-            MessageUtil.sendMessage(addressee, captcha);
-        else
-            EmailUtil.sendCaptcha(addressee, captcha);
-        request.getSession().setAttribute("captcha", captcha);
-        return captcha;
+        String captcha = impl.createCaptcha(true, 6);
+        if(impl.sendCaptcha(addressee, isPhone, captcha)){
+            request.getSession().setAttribute("captcha", captcha);
+            return captcha;
+        }
+        else {
+            request.getSession().setAttribute("msg", "cannot send captcha");
+            return null;
+        }
     }
 }
