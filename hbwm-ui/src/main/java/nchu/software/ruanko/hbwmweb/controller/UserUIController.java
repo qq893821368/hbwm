@@ -18,7 +18,8 @@ import java.lang.reflect.InvocationTargetException;
 @Controller
 public class UserUIController {
     @GetMapping("/login")
-    public String login(HttpServletRequest request, HttpServletResponse response) throws InvocationTargetException, NoSuchMethodException, NoSuchFieldException, IllegalAccessException {
+    public String login(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        DataAnalyzeImpl.test();
         String msg = null;
         if((msg = (String) request.getSession().getAttribute("msg")) != null)
             if(msg.equals("access")){
