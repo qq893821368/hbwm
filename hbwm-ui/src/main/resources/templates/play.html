@@ -31,7 +31,7 @@
             /*margin: 30px auto;*/
             width: 60px;
             height: 60px;
-            background:url("/images.icon/play-circle.png") no-repeat center bottom;
+            background:url("/images.icon/timeout.png") no-repeat center bottom;
             background-size:cover;
         }
 
@@ -142,6 +142,15 @@
 
         }
 
+        #musicList{
+            position: relative;
+            top:-270px;
+            width: 150px;
+            height: 250px;
+            background-color: rgba(12, 65, 25, 0.72);
+            color: #ffffff;
+        }
+
     </style>
     <script src="https://lib.baomitu.com/json3/3.3.3/json3.min.js"></script>
   <!--  <script src="https://www.layuicdn.com/layui-v2.5.4/layui.all.js"></script>-->
@@ -209,11 +218,11 @@
             <div class="layui-col-md3 layui-col-lg3">
                 <div class="layui-row">
                     <!--上一曲-->
-                    <div class="layui-col-md4 layui-col-lg4" style="margin-top: 5px"><img src="/images.icon/left-circle.png" height="50" width="50"/></div>
+                    <div class="layui-col-md4 layui-col-lg4" style="margin-top: 5px"><img id="prevBtn" src="/images.icon/left-circle.png" height="50" width="50"/></div>
                     <!--播放暂停-->
-                    <div class="layui-col-md4 layui-col-lg4"><div class="btn-audio"><audio id="mp3Btn"><source src="/music/周杰伦 - 说好不哭（with 五月天阿信）.flac" type="audio/mpeg" /></audio></div></div>
+                    <div class="layui-col-md4 layui-col-lg4"><div class="btn-audio"><audio id="mp3Btn" autoplay="autoplay"><source id="musicpath" src="" type="audio/mpeg" /></audio></div></div>
                     <!--下一曲-->
-                    <div class="layui-col-md4 layui-col-lg4" style="margin-top: 5px"><img src="/images.icon/right-circle.png" height="50" width="50"/></div>
+                    <div class="layui-col-md4 layui-col-lg4" style="margin-top: 5px"><img id="nextBtn" src="/images.icon/right-circle.png" height="50" width="50"/></div>
                 </div>
 
 
@@ -231,11 +240,23 @@
             <!--控件-->
             <div class="layui-col-md3 layui-col-lg3">
                 <div class="layui-row">
+                    <!--音量-->
                     <div class="layui-col-md2 layui-col-lg2" style="padding:18px">
                         <i class="layui-icon layui-icon-voice" style="width: 10px;"></i>
                     </div>
-                    <div class="layui-col-md3 layui-col-lg3">
+                    <div class="layui-col-md5 layui-col-lg5">
                         <input type="range" class="voiceran" min="0" max="100" value="50" id="ran"/>
+                    </div>
+                    <!--下载-->
+                    <div class="layui-col-md3 layui-col-lg3" style="padding:18px">
+                        <a  href="/music/周杰伦 - 说好不哭（with 五月天阿信）.flac"  download="歌名"><i class="layui-icon layui-icon-download-circle"></i></a>
+                    </div>
+
+                    <!--循环方式-->
+                    <!--列表-->
+                    <div class="layui-col-md1 layui-col-lg1" style="padding:18px;height: 0px">
+                       <i id="musicListBtn" class="layui-icon layui-icon-list"></i>
+                        <div id="musicList" style="display: none"></div>
                     </div>
                 </div>
             </div>
@@ -265,25 +286,31 @@
 
 <!--播放器-->
 <script type="text/javascript">
-    $(document).ready(function(){
 
+    /*临时数据 - 歌曲列表*/
+    var musicList = ["/music/周杰伦 - 说好不哭（with 五月天阿信）.flac",
+        "/music/Kendrick Lamar - HUMBLE..flac",
+        "/music/李荣浩 - 出卖.mp3",
+        "/music/童言无忌.mp3"];
+
+    var musicPath = document.getElementById("musicpath");
+    var musicindex = 0;
+    musicPath.src = musicList[musicindex];
+
+
+    $(function(){
+        /*加载歌词*/
         lrcTXT=$.ajax({url:"/music/lyric/周杰伦 - 说好不哭（with 五月天阿信）.txt",async:false});
 
-
-
-    });
-    $(function(){
-        //播放完毕
-        $('#mp3Btn').on('ended', function() {
-            console.log("音频已播放完成");
-            $('.btn-audio').css({'background':'url(/images.icon/play-circle.png) no-repeat center bottom','background-size':'cover'});
-        })
         //播放器控制
         var audio = document.getElementById('mp3Btn');
         var ran=document.getElementById("ran");
-
+        audio.load();
+        audio.play();
+        TimeSpan();
+        console.log("音频已加载");
      //   audio.volume = .3;
-
+        /*播放*/
         $('.btn-audio').click(function() {
             event.stopPropagation();//防止冒泡
             if(audio.paused){ //如果当前是暂停状态
@@ -296,7 +323,22 @@
                 audio.pause(); //暂停
             }
         });
-
+        /*上一曲*/
+        $('#prevBtn').click(function () {
+            if(musicindex==0)
+                musicindex=musicList.length;
+            musicPath.src=musicList[--musicindex];
+            audio.load();
+            audio.play();
+        })
+        /*下一曲*/
+        $('#nextBtn').click(function () {
+            if(musicindex==musicList.length-1)
+                musicindex=-1;
+            musicPath.src=musicList[++musicindex];
+            audio.load();
+            audio.play();
+        })
         function TimeSpan() {
             var ProcessNow = 0;
 
@@ -327,6 +369,18 @@
             audio.muted=false;
         });
 
+        //播放完毕
+        $('#mp3Btn').on('ended', function() {
+            console.log("音频已播放完成");
+            if(musicindex==musicList.length-1)
+                musicindex=-1;
+            musicPath.src=musicList[++musicindex];
+            audio.load();
+            console.log("下一曲已加载");
+            audio.play();
+            //$('.btn-audio').css({'background':'url(/images.icon/play-circle.png) no-repeat center bottom','background-size':'cover'});
+        })
+
         /*进度条控制*/
 
         $('.Process').click(function (event) {
@@ -336,6 +390,7 @@
             $li.get(currentLine).className="";
             audio.currentTime = audio.duration*processPercent;
         })
+
 /*歌词*/
         function parseLyric(text) {
             lyric = text.split("\n"); //先按行分割
@@ -450,6 +505,21 @@
             }
 
         };
+
+        /*播放列表*/
+        $('#musicListBtn').click(function () {
+            function musicListPlay() {
+                alert("play")
+            }
+            if(document.getElementById("musicList").style.display=="none")
+                document.getElementById("musicList").style.display="block";
+            else
+                document.getElementById("musicList").style.display="none";
+            for(var listIndex=0;listIndex<musicList.length;listIndex++){
+                document.getElementById("musicList").innerHTML+="<i onclick='musicListPlay()'>"+musicList[listIndex]+"</i><br>";
+            }
+
+        })
 
     })
 
