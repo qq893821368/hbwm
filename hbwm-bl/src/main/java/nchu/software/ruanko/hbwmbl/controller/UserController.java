@@ -60,13 +60,13 @@ public class UserController {
 
     @RequestMapping("/registerImpl")
     @ResponseBody
-    public Boolean register(HttpServletRequest request, HttpServletResponse response, User registrant, Model model) throws IOException, ServletException {
-        String user = impl.query(registrant.getAccount());
+    public Boolean register(HttpServletRequest request, HttpServletResponse response, String addressee, String newpassword, Model model) throws IOException, ServletException {
+        String user = impl.query(addressee);
         String message;
         if(!user.equals("not found"))
             message = "Account already exist";
         else
-            message = impl.register(registrant);
+            message = impl.register(addressee, newpassword);
         request.getSession().setAttribute("msg", message);
         request.getRequestDispatcher("/register").forward(request, response);
         if(message.equals("success"))

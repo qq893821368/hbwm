@@ -101,10 +101,10 @@ public class UserImpl {//登录、注册、找回密码、修改个人信息
      * return: String
      * --------------------END
      */
-    public String register(User user){
-        //需要修改
-        Map<String, String> properties = StringUtil.propertyToMap(user.toString());
-        int rows = mapper.addUser(properties.getOrDefault("account", null), properties.getOrDefault("password", null));
-        return rows + "be affected";
+    public String register(String account, String password){
+        int rows = mapper.addUser(account, password);
+        if(rows == 1)
+            return "success";
+        return "fail";
     }
 }

@@ -16,6 +16,6 @@ public interface UserRepository {
     @Select("SELECT * FROM user WHERE account = #{account}")
     public List<User> findAllByAccount(@Param("account") String account);
 
-    @Insert("INSERT INTO user VALUES(#{account}, #{password})")
+    @Insert("INSERT INTO user(account, password) VALUES(#{account}, #{password})")
     public int addUser(@Param("account") String account, @Param("password") String password);
 }

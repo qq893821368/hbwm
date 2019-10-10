@@ -19,7 +19,7 @@ import java.lang.reflect.InvocationTargetException;
 public class UserUIController {
     @GetMapping("/login")
     public String login(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        DataAnalyzeImpl.test();
+
         String msg = null;
         if((msg = (String) request.getSession().getAttribute("msg")) != null)
             if(msg.equals("access")){
@@ -29,7 +29,7 @@ public class UserUIController {
     }
 
     @RequestMapping("/register")
-    public void register(HttpServletRequest request, HttpServletResponse response, User registrant, Model model) throws IOException, ServletException {
+    public void register(HttpServletRequest request, HttpServletResponse response, String addressee, String newpassword, Model model) throws IOException, ServletException {
         String msg = null;
         try{
             msg = (String) request.getSession().getAttribute("msg");
@@ -40,13 +40,12 @@ public class UserUIController {
         }
         if(msg != null){
             if(msg.equals("success")){
-                request.getSession().setAttribute("user", registrant.getAccount());
-                response.sendRedirect("/home");
+                request.getSession().setAttribute("user", addressee);
+                response.sendRedirect("/verify?account="+addressee+"&password="+newpassword);
             }
-            else {
-                request.getSession().setAttribute("message", msg);
-                response.sendRedirect("/register");
-            }
+            else
+                request.getSession().setAttribute("tips", msg);
+            /*response.sendRedirect("/register");*/
             return ;
         }
         request.getRequestDispatcher("/registerImpl").forward(request, response);
