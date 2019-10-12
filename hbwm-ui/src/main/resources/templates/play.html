@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <!--代码由www.magicalcoder.com可视化布局器拖拽生成-->
+<html  xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>layui</title>
+
     <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui-v2.5.4/css/layui.css" />
     <style>
         .layui-tab-title li {
@@ -20,6 +22,7 @@
             text-align: center;
             cursor: pointer;
         }
+
         .blur {
             filter: blur(40px);
             -webkit-filter: blur(40px); /* chrome, opera */
@@ -27,6 +30,7 @@
             -moz-filter: blur(40px);
             opacity:0.7;
         }
+
         .btn-audio{
             /*margin: 30px auto;*/
             width: 60px;
@@ -78,6 +82,7 @@
 
             /*input的长度为80%，margin-left的长度为10%*/
         }
+         /*设置range的滑块的具体样式*/
         .voiceran::-webkit-slider-thumb{
             -webkit-appearance: none;/*去除默认样式*/
             cursor: default;
@@ -146,10 +151,9 @@
 </head>
 <body style="background-color:#ffffff" >
 
-
 <div class="layui-fluid" style="margin-right: 250px; margin-left: 250px;">
     <div id="Layer1" class="blur" style="position:absolute; width:100%; height:100%; z-index:-1">
-        <img src="/images.music/playpic.jpg" height="100%" width="100%"/>
+        <img id="h_bg_pic" src="/images.music/playpic.jpg" height="100%" width="100%"/>
     </div>
     <div class="layui-row">
         <div class="layui-row">
@@ -168,14 +172,14 @@
         <div class="layui-row">
             <!--专辑图片-->
             <div class="layui-col-md6 layui-col-lg6" align="center" style="padding-left:100px;padding-top: 150px">
-                <img src="/images.music/playpic.jpg" height="250" width="250"/>
+                <img id="h_music_pic" src="/images.music/playpic.jpg" height="250" width="250"/>
                 <br><br>
                 <!--歌手-->
-                <a>周杰伦</a>
+                <a id="h_singer">周杰伦</a>
             </div>
             <!--歌词-->
             <div class="layui-col-md6 layui-col-lg6" align="center" style="padding: 100px 0px 100px">
-                <h1 style="float: left">说好不哭</h1>
+                <h1 id="h_name" style="float: left">说好不哭</h1>
                 <br><br>
                 <hr class="layui-bg-green">
                 <div id="lrc" style="height: 300px;overflow: hidden;">
@@ -229,7 +233,16 @@
                     <!--列表-->
                     <div class="layui-col-md1 layui-col-lg1" style="padding:18px;height: 0px">
                        <i id="musicListBtn" class="layui-icon layui-icon-list"></i>
-                        <div id="musicList" style="display: none"></div>
+                        <div  id="musicList" style="display: none">
+                            <div th:each="list:${musicList}">
+                                <li th:text="${list.music_name}"></li><br>
+                                <input name="music_name" th:value="${list.music_name}" type="hidden">
+                                <input name="music_file" th:value="${list.music_file}" type="hidden">
+                                <input name="pic_file" th:value="${list.pic_file}" type="hidden">
+                                <input name="lrc_file" th:value="${list.lrc_file}" type="hidden">
+                                <input name="singer" th:value="${list.singer}" type="hidden">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -256,24 +269,34 @@
 
 </script>-->
 
-
 <!--播放器-->
 <script type="text/javascript">
-
     /*临时数据 - 歌曲列表*/
     var musicList = ["/music/周杰伦 - 说好不哭（with 五月天阿信）.flac",
         "/music/Kendrick Lamar - HUMBLE..flac",
         "/music/李荣浩 - 出卖.mp3",
         "/music/童言无忌.mp3"];
+    musicList = '[[${musicList}]]';
+    var musicNames = document.getElementsByName("music_name");
+    var musicFiles = document.getElementsByName("music_file");
+    var singers = document.getElementsByName("singer");
+    var lrcFiles = document.getElementsByName("lrc_file");
+    var picFiles = document.getElementsByName("pic_file");
+    var musicInfoList=document.getElementById("musicList").getElementsByTagName("li");
 
+    var h_m_pic = document.getElementById("h_music_pic");
+    var h_bg_pic = document.getElementById("h_bg_pic");
+    var h_singer = document.getElementById("h_singer");
+    var h_name = document.getElementById("h_name");
     var musicPath = document.getElementById("musicpath");
     var musicindex = 0;
-    musicPath.src = musicList[musicindex];
+    musicPath.src = musicFiles[musicindex].value;
 
 
     $(function(){
         /*加载歌词*/
-        lrcTXT=$.ajax({url:"/music/lyric/周杰伦 - 说好不哭（with 五月天阿信）.txt",async:false});
+        lrcTXT=$.ajax({url: lrcFiles[0].value,async:false});
+
 
         //播放器控制
         var audio = document.getElementById('mp3Btn');
@@ -285,6 +308,7 @@
      //   audio.volume = .3;
         /*播放*/
         $('.btn-audio').click(function() {
+
             event.stopPropagation();//防止冒泡
             if(audio.paused){ //如果当前是暂停状态
                 $('.btn-audio').css({'background':'url(/images.icon/timeout.png) no-repeat center bottom','background-size':'cover'});
@@ -298,19 +322,19 @@
         /*上一曲*/
         $('#prevBtn').click(function () {
             if(musicindex==0)
-                musicindex=musicList.length;
-            musicPath.src=musicList[--musicindex];
-            audio.load();
-            audio.play();
+                musicindex=musicFiles.length;
+            --musicindex;
+            loadMusic(musicindex);
         })
         /*下一曲*/
         $('#nextBtn').click(function () {
-            if(musicindex==musicList.length-1)
+            if(musicindex==musicFiles.length-1)
                 musicindex=-1;
-            musicPath.src=musicList[++musicindex];
-            audio.load();
-            audio.play();
+            musicindex++;
+
+            loadMusic(musicindex);
         })
+        /*进度条*/
         function TimeSpan() {
             var ProcessNow = 0;
 
@@ -344,9 +368,9 @@
         //播放完毕
         $('#mp3Btn').on('ended', function() {
             console.log("音频已播放完成");
-            if(musicindex==musicList.length-1)
+            if(musicindex==musicFiles.length-1)
                 musicindex=-1;
-            musicPath.src=musicList[++musicindex];
+            musicPath.src=musicFiles[++musicindex].value;
             audio.load();
             console.log("下一曲已加载");
             audio.play();
@@ -359,7 +383,11 @@
             var pagex = event.pageX;
             var prox = $('.Process').offset().left;
             var processPercent = (pagex-prox)/400;/*根据点击位置的位置x减进度条左边位置x除长度400得到百分比*/
-            $li.get(currentLine).className="";
+            try {
+                $li.get(currentLine).className="";
+            }catch (e) {
+                console.log("无歌词");
+            }
             audio.currentTime = audio.duration*processPercent;
         })
 
@@ -369,7 +397,7 @@
             var _l = lyric.length; //获取歌词行数
             lrc = new Array(); //新建一个数组存放最后结果
             var lrcJSON = "{";
-            for (i = 0; i < _l; i++) {
+            for (var i = 0; i < _l; i++) {
                 var d = lyric[i].match(/\[\d{2}:\d{2}\.\d{2}\]/g);  //正则匹配播放时间
 
                 var t = lyric[i].split(d); //以时间为分割点分割每行歌词，数组最后一个为歌词正文
@@ -382,19 +410,15 @@
                     lrc.push([d, t[1]]);
                     lrcJSON = lrcJSON + "\"" + d + "\":\"" + t[1] + "\",\n";
                 }
-
-
             }
             lrcJSON=lrcJSON+"}";
             var obj = eval ("(" + lrcJSON + ")");
-
+            console.log(obj);
             return obj;
         }
 
-
         var lrcTime = [];//歌词对应的时间数组
         var ul = $("#lrclist")[0];//获取ul
-
 
         var k = 0;
 
@@ -471,9 +495,9 @@
         };
 
         /*播放列表*/
-        for(var listIndex=0;listIndex<musicList.length;listIndex++){
-            document.getElementById("musicList").innerHTML+="<li>"+musicList[listIndex]+"</li><br>";
-        }
+       /* for(var listIndex=0;listIndex<musicList.length;listIndex++){
+            document.getElementById("musicList").innerHTML+="<li th:text='${list.music_name}'></li><br>";
+        }*/
         $('#musicListBtn').click(function () {
             if(document.getElementById("musicList").style.display=="none")
                 document.getElementById("musicList").style.display="block";
@@ -484,12 +508,28 @@
 
             for(let musicindex=0;musicindex<musicname.length;musicindex++){
                 musicname[musicindex].onclick=function () {
-                    musicPath.src=musicList[musicindex];
-                    audio.load();
-                    audio.play();
+                   loadMusic(musicindex)
                 }
             }
         })
+        function loadMusic(index) {
+            musicPath.src=musicFiles[index].value;
+         //   lrcTXT=$.ajax({url:lrcFiles[musicindex].value,async:false});
+            h_name.innerHTML=musicNames[index].value;
+            h_singer.innerHTML=singers[index].value;
+            h_bg_pic.src=picFiles[index].value;
+            h_m_pic.src=picFiles[index].value;
+            lrcTXT=$.ajax({url: lrcFiles[index].value,async:false});
+            $.each(parseLyric(lrcTXT.responseText), function(key, value) {//遍历lrc
+
+                lrcTime[k++] = parseFloat(key.substr(1,3)) * 60 + parseFloat(key.substring(4,10));//00:00.000转化为00.000格式
+                ul.innerHTML += "<li><p>"+value+"</p></li>";//ul里填充歌词
+
+
+            });
+            audio.load();
+            audio.play();
+        }
 
     })
 
