@@ -271,6 +271,8 @@
 
 <!--播放器-->
 <script type="text/javascript">
+
+
     /*临时数据 - 歌曲列表*/
     var musicList = ["/music/周杰伦 - 说好不哭（with 五月天阿信）.flac",
         "/music/Kendrick Lamar - HUMBLE..flac",
@@ -295,7 +297,7 @@
 
     $(function(){
         /*加载歌词*/
-        lrcTXT=$.ajax({url: lrcFiles[0].value,async:false});
+       var lrcTXT=$.ajax({url: lrcFiles[0].value,async:false});
 
 
         //播放器控制
@@ -413,7 +415,7 @@
             }
             lrcJSON=lrcJSON+"}";
             var obj = eval ("(" + lrcJSON + ")");
-            console.log(obj);
+
             return obj;
         }
 
@@ -433,13 +435,13 @@
         lrcTime[lrcTime.length] = lrcTime[lrcTime.length-1] + 3;//如不另加一个结束时间，到最后歌词滚动不到最后一句
 
 
-        var $li = $("#lrclist>li");//获取所有li
-        var currentLine = 0;//当前播放到哪一句了
-        var currentTime;//当前播放的时间
 
+        var currentLine = 0;//当前播放到哪一句了
+        var currentTime=0;//当前播放的时间
+        var $li = $("#lrclist>li");//获取所有li
         var audio = document.getElementById("mp3Btn");
 
-        var ppxx;//保存ul的translateY值
+        var ppxx=0;//保存ul的translateY值
 
 
 
@@ -447,9 +449,10 @@
 
             currentTime = audio.currentTime;
 
-            for (j=currentLine, len=lrcTime.length; j<len; j++){
+            for (var j=currentLine, len=lrcTime.length; j<len; j++){
 
                 if (currentTime<lrcTime[j+1] && currentTime>lrcTime[j]){
+
 
                     currentLine =  j;
 
@@ -481,7 +484,7 @@
 
             $li.get(currentLine).className="";
 
-            for (k=0, len=lrcTime.length; k<len; k++){
+            for (var k=0, len=lrcTime.length; k<len; k++){
 
                 if (currentTime<lrcTime[k+1] && currentTime<lrcTime[k]){
                     currentLine =  k;
@@ -520,6 +523,13 @@
             h_bg_pic.src=picFiles[index].value;
             h_m_pic.src=picFiles[index].value;
             lrcTXT=$.ajax({url: lrcFiles[index].value,async:false});
+            ul.innerHTML="";
+            ul.style.transform = "translateY(140px)"
+            ppxx=0;
+            currentLine=0;
+            lrcTime=[];
+
+            k=0;
             $.each(parseLyric(lrcTXT.responseText), function(key, value) {//遍历lrc
 
                 lrcTime[k++] = parseFloat(key.substr(1,3)) * 60 + parseFloat(key.substring(4,10));//00:00.000转化为00.000格式
@@ -527,6 +537,7 @@
 
 
             });
+            $li = $("#lrclist>li");//获取所有li
             audio.load();
             audio.play();
         }
