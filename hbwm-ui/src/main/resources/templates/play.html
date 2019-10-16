@@ -153,7 +153,7 @@
 
 <div class="layui-fluid" style="margin-right: 250px; margin-left: 250px;">
     <div id="Layer1" class="blur" style="position:absolute; width:100%; height:100%; z-index:-1">
-        <img id="h_bg_pic" src="/images.music/playpic.jpg" height="100%" width="100%"/>
+        <img id="h_bg_pic" src="" height="100%" width="100%"/>
     </div>
     <div class="layui-row">
         <div class="layui-row">
@@ -172,14 +172,14 @@
         <div class="layui-row">
             <!--专辑图片-->
             <div class="layui-col-md6 layui-col-lg6" align="center" style="padding-left:100px;padding-top: 150px">
-                <img id="h_music_pic" src="/images.music/playpic.jpg" height="250" width="250"/>
+                <img id="h_music_pic" src="" height="250" width="250"/>
                 <br><br>
                 <!--歌手-->
-                <a id="h_singer">周杰伦</a>
+                <a id="h_singer"></a>
             </div>
             <!--歌词-->
             <div class="layui-col-md6 layui-col-lg6" align="center" style="padding: 100px 0px 100px">
-                <h1 id="h_name" style="float: left">说好不哭</h1>
+                <h1 id="h_name" style="float: left"></h1>
                 <br><br>
                 <hr class="layui-bg-green">
                 <div id="lrc" style="height: 300px;overflow: hidden;">
@@ -274,10 +274,7 @@
 
 
     /*临时数据 - 歌曲列表*/
-    var musicList = ["/music/周杰伦 - 说好不哭（with 五月天阿信）.flac",
-        "/music/Kendrick Lamar - HUMBLE..flac",
-        "/music/李荣浩 - 出卖.mp3",
-        "/music/童言无忌.mp3"];
+
     musicList = '[[${musicList}]]';
     var musicNames = document.getElementsByName("music_name");
     var musicFiles = document.getElementsByName("music_file");
@@ -293,7 +290,10 @@
     var musicPath = document.getElementById("musicpath");
     var musicindex = 0;
     musicPath.src = musicFiles[musicindex].value;
-
+    h_name.innerHTML=musicNames[musicindex].value;
+    h_singer.innerHTML=singers[musicindex].value;
+    h_bg_pic.src=picFiles[musicindex].value;
+    h_m_pic.src=picFiles[musicindex].value;
 
     $(function(){
         /*加载歌词*/
@@ -372,10 +372,7 @@
             console.log("音频已播放完成");
             if(musicindex==musicFiles.length-1)
                 musicindex=-1;
-            musicPath.src=musicFiles[++musicindex].value;
-            audio.load();
-            console.log("下一曲已加载");
-            audio.play();
+            loadMusic(++musicindex);
             //$('.btn-audio').css({'background':'url(/images.icon/play-circle.png) no-repeat center bottom','background-size':'cover'});
         })
 
