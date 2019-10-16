@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!--代码由www.magicalcoder.com可视化布局器拖拽生成-->
+<html  xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>layui</title>
@@ -60,9 +61,9 @@
     <br>
     <div class="layui-row">
         <ul class="layui-nav">
-            <li class="layui-nav-item"><a>首页</a></li>
-            <li class="layui-nav-item"><a href="javascript:;">榜单</a></li>
-            <li class="layui-nav-item layui-this"><a href="javascript:;">歌手</a></li>
+            <li class="layui-nav-item"><a href="/home">首页</a></li>
+            <li class="layui-nav-item"><a href="/ranklist">榜单</a></li>
+            <li class="layui-nav-item layui-this"><a href="/singer">歌手</a></li>
 
         </ul>
         <br>
@@ -72,72 +73,139 @@
             <ul class="layui-nav layui-nav-tree" lay-filter="test" style="width: 150px;height: 600px">
                 <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a href="javascript:;">华语歌手</a>
+                    <a href="javascript:ChineseSinger();">华语歌手</a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">欧美歌手</a>
+                    <a href="javascript:EASinger();">欧美歌手</a>
                 </li>
-                <li class="layui-nav-item"><a href="javascript:;">日韩歌手</a></li>
-                <li class="layui-nav-item"><a href="javascript:;">其他歌手</a></li>
+                <li class="layui-nav-item"><a href="javascript:JKSinger();">日韩歌手</a></li>
+                <li class="layui-nav-item"><a href="javascript:OtherSinger();">其他歌手</a></li>
             </ul>
         </div>
-        <div class="layui-col-md10 layui-col-lg10">
-            <h1>华语歌手</h1>
+        <div class="layui-col-md10 layui-col-lg10" id="singer-plane-1" style="display: block">
+            <h1 id="title">华语歌手</h1>
             <hr class="layui-bg-green" style="height: 3px">
             <div class="layui-row">
-                <div class="layui-col-md3 layui-col-lg3"><img src="../static/images/singer/zjl.jpg"></div>
-                <div class="layui-col-md3 layui-col-lg3"><img src="../static/images/singer/zjl.jpg"></div>
-                <div class="layui-col-md3 layui-col-lg3"><img src="../static/images/singer/zjl.jpg"></div>
-                <div class="layui-col-md3 layui-col-lg3"><img src="../static/images/singer/zjl.jpg"></div>
+                <div th:each="list,listStat:${chineseSinger}" >
+                    <a th:href="@{'/singerInfo?singer_id='+${list.singer_id}}" th:if="${listStat.index < 8}">
+                        <div class="layui-col-md3 layui-col-lg3">
+                            <img th:src="${list.singer_pic}"><br>
+                            <i th:text="${list.singer_name}"></i>
+                        </div>
+
+                    </a>
+
+                </div>
             </div>
             <br>
-            <div class="layui-row">
-                <div class="layui-col-md3 layui-col-lg3"><a><img src="../static/images/singer/zjl.jpg"></a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a><img src="../static/images/singer/zjl.jpg"></a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a><img src="../static/images/singer/zjl.jpg"></a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a><img src="../static/images/singer/zjl.jpg"></a></div>
-            </div>
             <hr class="layui-bg-green">
-            <div class="layui-row">
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-            </div>
-            <div class="layui-row">
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-            </div>
-            <div class="layui-row">
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-            </div>
-            <div class="layui-row">
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-            </div>
-            <div class="layui-row">
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-            </div>
-            <div class="layui-row">
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-                <div class="layui-col-md3 layui-col-lg3"><a>歌手名</a></div>
-            </div>
+           <div>
+                <div th:each="list,listStat:${chineseSinger}" >
+                    <a th:href="@{'/singerInfo?singer_id='+${list.singer_id}}" th:if="${listStat.index >= 8}">
+                        <div class="layui-col-md3 layui-col-lg3">
+                            <i th:text="${list.singer_name}"></i>
+                        </div>
 
+                    </a>
+
+                </div>
+            </div>
         </div>
+        <div class="layui-col-md10 layui-col-lg10" id="singer-plane-2" style="display: none">
+            <h1>欧美歌手</h1>
+            <hr class="layui-bg-green" style="height: 3px">
+            <div class="layui-row">
+                <div th:each="list,listStat:${eaSinger}" >
+                    <a th:href="@{'/singerInfo?singer_id='+${list.singer_id}}" th:if="${listStat.index < 8}">
+                        <div class="layui-col-md3 layui-col-lg3">
+                            <img th:src="${list.singer_pic}"><br>
+                            <i th:text="${list.singer_name}"></i>
+                        </div>
 
+                    </a>
+
+                </div>
+            </div>
+            <br>
+            <hr class="layui-bg-green">
+            <div>
+                <div th:each="list,listStat:${eaSinger}" >
+                    <a th:href="@{'/singerInfo?singer_id='+${list.singer_id}}" th:if="${listStat.index >= 8}">
+                        <div class="layui-col-md3 layui-col-lg3">
+                            <i th:text="${list.singer_name}"></i>
+                        </div>
+
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md10 layui-col-lg10" id="singer-plane-3" style="display: none">
+            <h1>日韩歌手</h1>
+            <hr class="layui-bg-green" style="height: 3px">
+            <div class="layui-row">
+                <div th:each="list,listStat:${jkSinger}" >
+                    <a th:href="@{'/singerInfo?singer_id='+${list.singer_id}}" th:if="${listStat.index < 8}">
+                        <div class="layui-col-md3 layui-col-lg3">
+                            <img th:src="${list.singer_pic}"><br>
+                            <i th:text="${list.singer_name}"></i>
+                        </div>
+
+                    </a>
+
+                </div>
+            </div>
+            <br>
+            <hr class="layui-bg-green">
+            <div>
+                <div th:each="list,listStat:${jkSinger}" >
+                    <a th:href="@{'/singerInfo?singer_id='+${list.singer_id}}" th:if="${listStat.index >= 8}">
+                        <div class="layui-col-md3 layui-col-lg3">
+                            <i th:text="${list.singer_name}"></i>
+                        </div>
+
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md10 layui-col-lg10" id="singer-plane-4" style="display: none">
+            <h1>其他歌手</h1>
+            <hr class="layui-bg-green" style="height: 3px">
+            <div class="layui-row">
+                <div th:each="list,listStat:${otherSinger}" >
+                    <a th:href="@{'/singerInfo?singer_id='+${list.singer_id}}" th:if="${listStat.index < 8}">
+                        <div class="layui-col-md3 layui-col-lg3">
+                            <img th:src="${list.singer_pic}"><br>
+                            <i th:text="${list.singer_name}"></i>
+                        </div>
+
+                    </a>
+
+                </div>
+            </div>
+            <br>
+            <hr class="layui-bg-green">
+            <div>
+                <div th:each="list,listStat:${otherSinger}" >
+                    <a th:href="@{'/singerInfo?singer_id='+${list.singer_id}}" th:if="${listStat.index >= 8}">
+                        <div class="layui-col-md3 layui-col-lg3">
+                            <i th:text="${list.singer_name}"></i>
+                        </div>
+
+                    </a>
+
+                </div>
+            </div>
+        </div>
     </div>
+
+
+</div>
+
+
+
+</div>
 
 
 </div>
@@ -360,6 +428,32 @@
         });
     });
 </script>
+<script>
 
+    function ChineseSinger() {
+        document.getElementById("singer-plane-1").style.display="block";
+        document.getElementById("singer-plane-2").style.display="none";
+        document.getElementById("singer-plane-3").style.display="none";
+        document.getElementById("singer-plane-4").style.display="none";
+    }
+    function EASinger() {
+        document.getElementById("singer-plane-1").style.display="none";
+        document.getElementById("singer-plane-2").style.display="block";
+        document.getElementById("singer-plane-3").style.display="none";
+        document.getElementById("singer-plane-4").style.display="none";
+    }
+    function JKSinger() {
+        document.getElementById("singer-plane-1").style.display="none";
+        document.getElementById("singer-plane-2").style.display="none";
+        document.getElementById("singer-plane-3").style.display="block";
+        document.getElementById("singer-plane-4").style.display="none";
+    }
+    function OtherSinger() {
+        document.getElementById("singer-plane-1").style.display="none";
+        document.getElementById("singer-plane-2").style.display="none";
+        document.getElementById("singer-plane-3").style.display="none";
+        document.getElementById("singer-plane-4").style.display="block";
+    }
+</script>
 </body>
 </html>

@@ -1,17 +1,27 @@
 package nchu.software.ruanko.hbwmda.repository;
 
+import nchu.software.ruanko.hbwmcommon.model.Music;
+import nchu.software.ruanko.hbwmcommon.model.MusicInfo;
+import nchu.software.ruanko.hbwmcommon.model.Singer;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface SingerMapper {
     @Select("select * from singer_info where nation='中国'")
-    public int[] getChineseSingerId();
+    public Singer[] getChineseSingerId();
     @Select("select * from singer_info where nation='欧美'")
-    public int[] getEASingerId();
+    public Singer[] getEASingerId();
     @Select("select * from singer_info where nation='日韩'")
-    public int[] getJKSingerId();
+    public Singer[] getJKSingerId();
     @Select("select * from singer_info where nation='其他'")
-    public int[] getOtherSingerId();
+    public Singer[] getOtherSingerId();
+
+    @Select("select * from singer_info where singer_id=#{singer_id}")
+    public Singer getSingerInfo(@Param("singer_id") int singer_id);
+
+    @Select("select music.music_id from music,singer_info where singer_info.singer_id=#{singer_id} and music.singer_id=singer_info.singer_id")
+    public int[] getSingerMusicList(@Param("singer_id") int singer_id);
 
 }

@@ -21,12 +21,7 @@ public class testController {
     MusicInfoMapperImpl musicInfoMapperImpl;
     @Autowired
     MusicRankMapperImpl musicRankMapperImpl;
-    @GetMapping("/")
-    public String index(Model model){
 
-
-        return "home";
-    }
    /* @GetMapping("/musicIdList")
     public String getMusicIdList(Model model,int[] musicId) {
         model.addAttribute("musicId",musicId);
@@ -44,15 +39,15 @@ public class testController {
         model.addAttribute("musicList",musicInfo);
         return "play";
     }
-    @GetMapping("/home")
+    @GetMapping(value = {"/home","/"})
     public String home(Model model){
-        int newMusicId[]=null;
-        newMusicId=musicRankMapperImpl.getNewRankList();
-        MusicInfo newmusicInfo[]=new MusicInfo[newMusicId.length];
+        int newMusicId[];//新歌
+        newMusicId=musicRankMapperImpl.getNewRankList();//获取新歌id列表
+        MusicInfo newmusicInfo[]=new MusicInfo[newMusicId.length];//创建歌曲信息列表
         for(int i=0;i<10&&i<newMusicId.length;i++){
-            newmusicInfo[i]=musicInfoMapperImpl.getTheMusic(newMusicId[i]);
+            newmusicInfo[i]=musicInfoMapperImpl.getTheMusic(newMusicId[i]);//获取歌曲信息
         }
-        model.addAttribute("newMusicList",newmusicInfo);
+        model.addAttribute("newMusicList",newmusicInfo);//传歌曲信息列表给前台
         return "home";
     }
 
