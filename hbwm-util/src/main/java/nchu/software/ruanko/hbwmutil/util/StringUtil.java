@@ -1,5 +1,7 @@
 package nchu.software.ruanko.hbwmutil.util;
 
+import org.springframework.util.DigestUtils;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -92,18 +94,32 @@ public class StringUtil {
         Map<String, String> res = new HashMap<>();
         String[] strs = object.split("\n");
         for(int i=1; i<strs.length-1; i++){
-            Pattern pattern = Pattern.compile(":\\s*\\[");
-            Matcher matcher = pattern.matcher(strs[i]);
-            if(matcher.find())
-                res.put(strs[i].substring(0, matcher.start()).trim(), strs[i].substring(matcher.end(), strs[i].length()-1).trim());
-            else
-                res.put("res["+i+"]", null);
+            Pattern keyPat = Pattern.compile("[\\s\\S]*:");
+            Pattern valPat = Pattern.compile(":[\\s\\S]*");
+            Matcher keyMat = keyPat.matcher(strs[i]);
+            Matcher valMat = valPat.matcher(strs[i]);
+            if(keyMat.find() && valMat.find()){
+                String key = strs[i].substring(keyMat.start(), keyMat.end()-1).trim().replace("]", "")
+                        .replace("\"", "").replace("[", "");
+                String val = strs[i].substring(valMat.start()+1, valMat.end()).trim().replace("]", "")
+                        .replace("\"", "").replace("[", "");
+                res.put(key, val);
+            }
+            else if(keyMat.find()){
+                String key = strs[i].substring(keyMat.start(), keyMat.end()-1).trim().replace("]", "")
+                        .replace("\"", "").replace("[", "");
+                res.put(key, null);
+            }
+            else {
+                String val = strs[i].substring(valMat.start()+1, valMat.end()).trim().replace("]", "")
+                        .replace("\"", "").replace("[", "");
+                res.put("res["+i+"]", val);
+            }
         }
         return res;
     }
 
     public static String md5(String plaintext){
-        String ciphertext = plaintext;
-        return ciphertext;
+        return DigestUtils.md5DigestAsHex(plaintext.getBytes());
     }
 }

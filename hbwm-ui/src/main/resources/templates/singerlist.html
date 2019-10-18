@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>歌手列表</title>
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui-v2.5.4/css/layui.css" />
+</head>
+<body>
+    <a href="/increase" class="layui-btn">添加歌手</a>
+    <div style="width:100%;height:300px;overflow:auto;" >
+    <form action="/delete">
+        <table class="layui-table">
+        <thead>
+        <tr>
+            <td>歌手ID</td>
+            <td>歌手名</td>
+            <td>歌手简介</td>
+            <td>歌手经历</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="singer:${list}">
+            <td th:text="${singer.singer_id}"name="id"></td>
+            <td th:text="${singer.singer_name}"></td>
+            <td th:text="${singer.intro}"></td>
+            <td th:text="${singer.exp}"></td>
+            <td>
+                <a name="select" th:href="@{'/select?id='+${singer.singer_id}}" class="layui-btn">查看</a>
+                <a name="alter"  th:href="@{'/alter?id='+${singer.singer_id}}" class="layui-btn layui-btn-normal">修改</a>
+                <button type="submit" th:value="${singer.singer_id}" name="btn" class="layui-btn ">删除</button>
+            </td>
+
+        </tr>
+        </thead>
+    </table>
+    </form>
+    </div>
+    <a href="/home" class="layui-btn">返回</a>
+</body>
+</html>

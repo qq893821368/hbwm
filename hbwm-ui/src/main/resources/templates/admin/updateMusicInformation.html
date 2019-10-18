@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>修改信息</title>
+    <script src="../../static/layui/js/layui.js"></script>
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+</head>
+<body>
+    <form action="updatemusicinformation">
+        <div class="layui-form-item">
+            <label class="layui-form-label">歌名</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" th:value="${musicinfo.music_name}" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">歌手</label>
+            <div class="layui-input-block">
+                <input type="text" name="singer" th:value="${musicinfo.singer}" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">专辑</label>
+            <div class="layui-input-block">
+                <input type="text" name="album" th:value="${musicinfo.album}" class="layui-input">
+            </div>
+        </div>
+        <input type="hidden" name="id" th:value="${musicinfo.info_id}">
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

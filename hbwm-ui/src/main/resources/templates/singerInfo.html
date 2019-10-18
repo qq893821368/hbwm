@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--代码由www.magicalcoder.com可视化布局器拖拽生成-->
+<html  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>layui</title>
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui-v2.5.4/css/layui.css" />
+    <style>
+        .layui-tab-title li {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: middle;
+            font-size: 12px;
+            transition: all .2s;
+            -webkit-transition: all .2s;
+            position: relative;
+            line-height: 53px;
+            min-width: 0px;
+            padding: 0 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+        span{
+            font-size: 20px;
+        }
+    </style>
+    <script src="https://lib.baomitu.com/json3/3.3.3/json3.min.js"></script>
+    <script src="https://www.layuicdn.com/layui-v2.5.4/layui.all.js"></script>
+    <script src="https://lib.baomitu.com/echarts/4.2.1/echarts.min.js"></script>
+    <!--layui的table col操作列自定义的模板 您可以根据自己的实际情况改动-->
+
+
+</head>
+<body style="background-color:#ffffff;">
+<div class="layui-fluid" style="margin-right: 250px; margin-left: 250px;background-color:#eee;;">
+    <div class="layui-row">
+        <div class="layui-row">
+            <br>
+            <div class="layui-col-md2 layui-col-lg2">
+                <img style="width: 20%;" src="img.jpg"></img>
+                <i style="font-size: 30px">心随乐动</i>
+            </div>
+            <div class="layui-col-md4 layui-col-lg4">
+                <input class="layui-input" type="text" autocomplete="off" />
+            </div>
+            <div class="layui-col-md4 layui-col-lg4" style="height: 0px; float: right;">
+                <a style="float:right">个人中心 用户名</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="layui-row">
+        <ul class="layui-nav">
+            <li class="layui-nav-item"><a href="/home">首页</a></li>
+            <li class="layui-nav-item"><a href="/ranklist">榜单</a></li>
+            <li class="layui-nav-item layui-this"><a href="/singer">歌手</a></li>
+
+        </ul>
+        <br>
+        <div class="layui-tab-content" style="padding: 0px">
+            <div class="layui-row">
+                <div class="layui-col-md8 layui-col-lg4">
+                    <img th:src="${session.singer.singer_pic}"><br>
+                    <li th:text="${session.singer.singer_name}"></li><br>
+                    <li th:text="${session.singer.nation}"></li><br>
+                    <p th:text="${session.singer.intro}"></p><br>
+                    <p th:text="${session.singer.exp}"></p>
+                </div>
+                <div class="layui-col-md4 layui-col-lg8">
+                    <form action="/musicIdList">
+                        <button type="submit" style="float: right" class="layui-btn">全部播放</button>
+
+                        <span>歌名----------</span>
+                        <span>专辑</span>
+                        <div th:each="list:${session.singerMusicList}">
+                            <a th:href="@{'/musicIdList?musicId='+${list?.info_id}}">
+                                <span th:text="${list?.music_name}"></span>
+                                <span th:text="${list?.album}"></span>
+                            </a>
+                            <input name="musicId" th:value="${list?.info_id}" type="hidden">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+<script>
+    //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+
+        element.on('tab(docDemoTabBrief)', function(data){
+            console.log(data);
+        });
+    });
+</script>
+
+</body>
+</html>

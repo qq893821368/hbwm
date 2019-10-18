@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>查找列表</title>
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui-v2.5.4/css/layui.css" />
+    <link rel="script" href="layui/layui.js">
+    <script>
+        layui.use('laypage', function(){
+            var laypage = layui.laypage;
+
+            //执行一个laypage实例
+            laypage.render({
+                elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+                ,count: 50 //数据总数，从服务端得到
+            });
+        });
+    </script>
+</head>
+<body>
+<form action="/play">
+        <table class="layui-table">
+            <div id="test1">
+            <thead>
+            <tr>
+                <th>歌曲名</th>
+                <th>歌手名</th>
+                <th>专辑名</th>
+                <th>歌曲时长</th>
+                <th>是否VIP</th>
+                <th>操作</th>
+            </tr>
+            <tr th:each="music:${list}">
+                <td th:text="${music.music_name}"></td>
+                <td th:text="${music.singer}"></td>
+                <td th:text="${music.album}"></td>
+                <td th:text="${music.duration}"></td>
+                <td th:text="${music.isVip()}"></td>
+                <td>
+                    <button type="submit" class="layui-btn layui-btn-normal">播放</button>
+                    <a th:href="@{'/review?info_id='+${music.info_id}}" class="layui-btn" >查看评论</a>
+                    <a th:href="@{'/save?info_id='+${music.info_id}}" class="layui-btn">收藏</a>
+                    <a th:href="@{'/discuss?info_id='+${music.info_id}}" class="layui-btn" >评论</a>
+
+
+                </td>
+            </tr>
+            </thead>
+</div>
+            <!--<div class="layui-col-md12">-->
+                <!--<div class="layui-card">-->
+                    <!--<div class="layui-card-body">-->
+                        <!--<div id="test-laypage-demo1"><div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-2"><a href="javascript:;" class="layui-laypage-prev layui-disabled" data-page="0">上一页</a><span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>1</em></span><a href="javascript:;" data-page="2">2</a><a href="javascript:;" data-page="3">3</a><a href="javascript:;" data-page="4">4</a><a href="javascript:;" data-page="5">5</a><span class="layui-laypage-spr">…</span><a href="javascript:;" class="layui-laypage-last" title="尾页" data-page="7">7</a><a href="javascript:;" class="layui-laypage-next" data-page="2">下一页</a></div></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </table>
+</form>
+<a href="/home" class="layui-btn">返回</a>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui-v2.5.4/css/layui.css" />
+</head>
+<body>
+<form action="/modify">
+    <input type="hidden" name="singer_id" th:value="${singer.singer_id}">
+    <div class="layui-form-item">
+        <label class="layui-form-label">图片地址</label>
+        <div class="layui-input-inline">
+            <input name="singer_pic" class="layui-input" type="text"  autocomplete="off" lay-verify="singer_pic" th:value="${singer.singer_pic}">
+        </div>
+    </div>
+    <div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">歌手名</label>
+            <div class="layui-input-inline">
+                <input name="singer_name" class="layui-input" type="text" placeholder="请输入歌手名" autocomplete="off" lay-verify="singer_name" th:value="${singer.singer_name}" >
+            </div>
+        </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">国籍</label>
+                <div class="layui-input-inline">
+                    <input name="nation" class="layui-input" type="text" placeholder="请输入国籍" autocomplete="off" lay-verify="nation" th:value="${singer.nation}">
+                </div>
+            </div>
+
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">歌手简介</label>
+            <div class="layui-input-inline">
+                <textarea cols="50" rows="5" name="intro" class="layui-textarea" type="text" placeholder="请输入内容" autocomplete="off" lay-verify="intro" th:text="${singer.intro}"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">歌手经历</label>
+            <div class="layui-input-inline">
+                <textarea cols="50" rows="10" name="exp" class="layui-textarea" type="text" placeholder="请输入内容" autocomplete="off" lay-verify="exp" th:text="${singer.exp}"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn"type="submit" >提交</button>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

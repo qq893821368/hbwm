@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body th:fragment="search">
+    <div class="layui-row">
+        <br>
+        <div class="layui-col-md2 layui-col-lg2">
+            <img style="width: 20%;" src="images.icon/img.png"></img>
+            <i style="font-size: 30px">心随乐动</i>
+        </div>
+        <form class="layui-form" action="/find" method="get">
+            <div class="layui-col-md4 layui-col-lg4">
+                <input class="layui-input" type="text" name="music_name" autocomplete="off" />
+            </div>
+            <button class="layui-btn" type="submit">查询</button>
+        </form>
+        <div class="layui-col-md4 layui-col-lg4" style="height: 0px; float: right;">
+            <!--<a style="float:right" th:text="${session.user}" href="/logout">个人中心 用户名</a>-->
+        </div>
+    </div>
+</body>
+</html>

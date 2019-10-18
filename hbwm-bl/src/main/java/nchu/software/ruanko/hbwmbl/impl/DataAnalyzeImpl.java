@@ -1,7 +1,11 @@
 package nchu.software.ruanko.hbwmbl.impl;
 
 import nchu.software.ruanko.hbwmcommon.model.Music;
+import nchu.software.ruanko.hbwmcommon.model.User;
 import nchu.software.ruanko.hbwmda.mapper.DataMapper;
+import nchu.software.ruanko.hbwmda.mapper.MusicMapper;
+import nchu.software.ruanko.hbwmda.repository.DataRepository;
+import nchu.software.ruanko.hbwmda.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
@@ -10,12 +14,20 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Service
 @ComponentScan("nchu.software.ruanko.hbwmda")
 public class DataAnalyzeImpl {
     @Autowired
     DataMapper mapper;
+
+    @Autowired
+    MusicMapper musicMapper;
+    @Autowired
+    private DataRepository repo;
+    @Autowired
+    private UserRepository userRepository;
 
     /* Create by hjb 2019/9/21
      * Logic Method
@@ -30,12 +42,35 @@ public class DataAnalyzeImpl {
         Date date = new Date();
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :HH:mm:ss");
         String logging = "User[" + account + "] visit the system at " + dateFormat.format(date) + " and " + (flag?"access":"fail");
-        /*
-         * 访问数据入库
-         */
+        List<User> users = userRepository.findAllByAccount(account);
+        if(users.size() > 0)
+            repo.userAction(users.get(0).getUser_id(), "login");
         return logging;
     }
 
+    public String exit(String account){
+        Date date = new Date();
+        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :HH:mm:ss");
+        String logging = "User[" + account + "] exit the system at " + dateFormat.format(date);
+        repo.userAction(userRepository.findAllByAccount(account).get(0).getUser_id(), "logout");
+        return logging;
+    }
+
+    public String register(String account){
+        Date date = new Date();
+        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :HH:mm:ss");
+        String logging = "User[" + account + "] register an account at " + dateFormat.format(date);
+        repo.userAction(userRepository.findAllByAccount(account).get(0).getUser_id(), "register");
+        return logging;
+    }
+
+    public String play(int id){
+        Date date = new Date();
+        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :HH:mm:ss");
+        String logging = "Music[" + id + "] be played at " + dateFormat.format(date);
+        musicMapper.playOne(id);
+        return logging;
+    }
     /* Create by hjb 2019/10/02
      * Util Method
      * 计算两首音乐的相似度
@@ -79,7 +114,7 @@ public class DataAnalyzeImpl {
                 elem = 0;
 
         for(int i=1; i<matrix.length; i++)                      //给矩阵添加id信息
-            matrix[0][i] = matrix[i][0] = musics[i-1].getId();
+            matrix[0][i] = matrix[i][0] = musics[i-1].getMusic_id();
 
         for(int i=1; i<matrix.length; i++)                      //从第2行第2列开始为正式数据, 即matrix[1][1]开始
             for(int j=i+1; j<matrix.length; j++)
@@ -110,7 +145,7 @@ public class DataAnalyzeImpl {
         int[] top_k = new int[k];
 
         for(int i=1; i<matrix.length; i++)                                          //抽出歌曲对应的距离向量
-            if(matrix[i][0] == music.getId())
+            if(matrix[i][0] == music.getMusic_id())
                 similarities = matrix[i];
 
         if(similarities == null) throw new Exception("matrix can't match music");   //若没有对应向量则抛出异常
@@ -127,7 +162,7 @@ public class DataAnalyzeImpl {
             min = max;                                                              //将最小值置为最大的位置以便寻找真正的最小值
 
             for(int i=1; i<similarities.length; i++) {                              //在距离向量中寻找最小值及其定位, 0号下标为自己的id
-                if(matrix[0][i] == music.getId())
+                if(matrix[0][i] == music.getMusic_id())
                     continue;
                 if (min > similarities[i]) {
                     min = similarities[i];
@@ -141,7 +176,7 @@ public class DataAnalyzeImpl {
         return top_k;
     }
 
-    public static void test() throws Exception {
+    public static int[] test() throws Exception {
         Music a = new Music(1, 200, 157);
         Music b = new Music(4, 800, 736);
         Music c = new Music(8, 53600, 153);
@@ -152,9 +187,10 @@ public class DataAnalyzeImpl {
 
         int[] top_k = recommend(a, musicSimilarityMatrix(musics, new String[]{"p1", "p2"}), 3);
         for(Music m : musics)
-            if(m.getId() == top_k[0])
-                System.out.println( "get music[@id-"+top_k[0]+"@p1-"+m.getP1()+"@p2-"+m.getP2()+"]\n"+
-                                    "get music[@id-"+top_k[1]+"@p1-"+m.getP1()+"@p2-"+m.getP2()+"]\n"+
-                                    "get music[@id-"+top_k[2]+"@p1-"+m.getP1()+"@p2-"+m.getP2()+"]\n");
+            if(m.getMusic_id() == top_k[0])
+                System.out.println( "get music[@id-"+top_k[0]+"@p1-"+m.getPlay_volume()+"@p2-"+m.getDownload_volume()+"]\n"+
+                                    "get music[@id-"+top_k[1]+"@p1-"+m.getPlay_volume()+"@p2-"+m.getDownload_volume()+"]\n"+
+                                    "get music[@id-"+top_k[2]+"@p1-"+m.getPlay_volume()+"@p2-"+m.getDownload_volume()+"]\n");
+        return top_k;
     }
 }

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="../static/layui/js/jquery.js"></script>
+        <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                    window.close();
+                    refresh();
+            })
+            function refresh() {
+                window.opener.location.href="/verify?account=[[${session.account}]]&password=[[${session.password}]]";
+            }
+        </script>
+    </head>
+
+    <body></body>
+</html>

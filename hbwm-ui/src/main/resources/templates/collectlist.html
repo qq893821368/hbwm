@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>歌曲收藏</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body>
+    <form action="/play" >
+        <table class="layui-table">
+        <thead>
+        <tr>
+            <th>歌曲名</th>
+            <th>歌手名</th>
+            <th>专辑名</th>
+            <th>操作</th>
+        </tr>
+        <tr th:each="music:${list}">
+            <td th:text="${music.music_name}"></td>
+            <td th:text="${music.singer}"></td>
+            <td th:text="${music.album}"></td>
+            <td>
+                <button type="submit" class="layui-btn layui-btn-normal">播放</button>
+            </td>
+        </tr>
+        </thead>
+        </table>
+    </form>
+    <a href="/home" class="layui-btn">返回</a>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>歌曲评论</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body>
+    <form class="layui-form" action="/add">
+        <div>
+        <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label">用户ID</label>-->
+            <!--<div class="layui-input-inline">-->
+                <!--<input name="user_id" class="layui-input" type="text" placeholder="请输入用户编号" autocomplete="off" lay-verify="user_id">-->
+            <!--</div>-->
+        <!--</div>-->
+            <input type="hidden" name="user_id" th:value="1">
+        <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label">音乐ID</label>-->
+            <!--<div class="layui-input-inline">-->
+                <!--<input name="music_id" class="layui-input" type="text" placeholder="请输入音乐编号" autocomplete="off" lay-verify="music_id" th:value="${music_id}">-->
+            <!--</div>-->
+        <!--</div>-->
+            <input type="hidden" name="music_id" th:value="${music_id}">
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">内容</label>
+            <div class="layui-input-inline">
+                <textarea cols="50" rows="10" name="content" class="layui-textarea" type="text" placeholder="请输入内容" autocomplete="off" lay-verify="content"></textarea>
+            </div>
+        </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                <button class="layui-btn"type="submit" >提交</button>
+                </div>
+            </div>
+     </div>
+    </form>
+</body>
+</html>

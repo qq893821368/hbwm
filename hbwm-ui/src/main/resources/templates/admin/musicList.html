@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>歌曲管理</title>
+    <script src="layui/js/layui.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+
+</head>
+<body>
+<button class="layui-btn"><a href="/uploadMusic">上传新的歌曲</a> </button>
+
+<table class="layui-table">
+    <colgroup>
+        <col width="150">
+        <col width="200">
+        <col>
+    </colgroup>
+    <thead>
+    <tr>
+        <th>歌名</th>
+        <th>歌手</th>
+        <th>专辑</th>
+        <th>时长</th>
+        <th>修改</th>
+        <th>删除</th>
+        <th>修改专辑图片</th>
+        <th>修改音频资源</th>
+        <th>修改歌词文件</th>
+    </tr>
+    <tr th:each="musicinfo:${musicInfoList}">
+
+        <td th:text="${musicinfo.music_name}"></td>
+        <td th:text="${musicinfo.singer}"></td>
+        <td th:text="${musicinfo.album}"></td>
+        <td th:text="${musicinfo.duration}"></td>
+        <td><button class="layui-btn"><a th:href="@{'updatemusicinfo?id='+${musicinfo.info_id}}">修改</a></button></td>
+        <td><button class="layui-btn"><a th:href="@{'deletemusic?id='+${musicinfo.info_id}}">删除</a></button></td>
+        <td><button class="layui-btn"><a th:href="@{'updatemusic?id='+${musicinfo.info_id}}">修改音频资源</a></button></td>
+        <td><button class="layui-btn"><a th:href="@{'updatepic?id='+${musicinfo.info_id}}">修改专辑图片</a></button></td>
+        <td><button class="layui-btn"><a th:href="@{'updatelrc?id='+${musicinfo.info_id}}">修改歌词文件</a></button></td>
+    </tr>
+    </thead>
+
+</table>
+<a href="/home" class="layui-btn" style="float:right;margin-right: 3%">返回</a>
+<input type="hidden" id="message" th:value="${message}">
+</body>
+</html>

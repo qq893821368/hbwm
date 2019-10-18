@@ -1,5 +1,7 @@
 package nchu.software.ruanko.hbwmutil.interceptor;
 
+import nchu.software.ruanko.hbwmutil.util.AttributeUtil;
+import nchu.software.ruanko.hbwmutil.util.StringUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -19,7 +21,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception{
         HttpSession session = request.getSession();
-        if(session.getAttribute("user")==null){
+        if(StringUtil.isEmpty(AttributeUtil.getAttributeFromSession(session, "user", false))){
             response.sendRedirect("/login");
             return false;
         }

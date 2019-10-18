@@ -1,10 +1,420 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--代码由www.magicalcoder.com可视化布局器拖拽生成-->
+<html  xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>layui</title>
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui-v2.5.4/css/layui.css" />
+    <style>
+        .layui-tab-title li {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: middle;
+            font-size: 20px;
+            transition: all .2s;
+            -webkit-transition: all .2s;
+            position: relative;
+            line-height: 53px;
+            min-width: 0px;
+            padding: 0 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        img{
+            width: 80%;
+        }
+    </style>
+    <script src="https://lib.baomitu.com/json3/3.3.3/json3.min.js"></script>
+    <script src="https://www.layuicdn.com/layui-v2.5.4/layui.all.js"></script>
+    <script src="https://lib.baomitu.com/echarts/4.2.1/echarts.min.js"></script>
+    <!--<script src="https://lib.baomitu.com/echarts/4.2.1/echarts.min.js"></script>
+    <script src="js/jquery/jquery.js"></script>
+    <script src="layui/js/layui.js"></script>-->
+
+    <script>
+        //注意：导航 依赖 element 模块，否则无法进行功能性操作
+        layui.use('element', function(){
+            var element = layui.element;
+
+            //…
+        });
+        $(document).ready(function () {
+            $('#modifyUI').click(function () {
+                layui.use('layer', function () {
+                    var layer = layui.layer;
+                    layer.open({
+                        type:2,
+                        title:'修改个人信息',
+                        shadeClose:true,
+                        shade:false,
+                        maxmin:true,        //开启最大最小化按钮
+                        area:['400px', '640px'],
+                        content: 'http://localhost/mui'
+                    })
+                })
+            })
+        })
+    </script>
+
 </head>
-<body>
-    <h1>Home Page</h1>
+<body style="background-color:#ffffff;">
+<div class="layui-fluid" style="margin-right: 250px; margin-left: 250px;background-color:#eee;;">
+
+    <div th:replace="fragments/search::body"></div><br>
+    <div th:replace="fragments/navi::body"></div>
+
+    <div class="layui-row">
+
+        <br>
+        <div class="layui-tab-content" style="padding: 0px">
+            <!--首页--><div class="layui-tab-item layui-show">
+                <div class="layui-row">
+            <div class="layui-col-md8 layui-col-lg7.5">
+                <div class="layui-fluid" style="height: 300px">
+                    <div class="layui-row">
+                        <div class="layui-col-md6 layui-col-lg6">
+                            <h1><span style="color: rgba(64,162,122,0.9)">新歌</span><span>首发</span></h1>
+                        </div>
+
+
+                    </div>
+
+                    <div class="layui-tab layui-tab-brief"  style="position: relative;top:-50px" >
+
+                        <form action="/musicIdList">
+                            <button type="submit" style="float: right" class="layui-btn">全部播放</button>
+                            <br><br>
+                            <hr class="layui-bg-green">
+
+                            <div th:each="list:${session.newMusicList}">
+                                <a th:href="@{'/musicIdList?musicId='+${list?.info_id}}">
+                                    <span th:text="${list?.music_name}"></span>&nbsp;-
+                                    <span th:text="${list?.singer}"></span>
+                                </a>
+                                <input name="musicId" th:value="${list?.info_id}" type="hidden">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="layui-fluid" style="height: 300px">
+                    <div class="layui-row">
+                        <div class="layui-col-md6 layui-col-lg6">
+                            <h1><span style="color: rgba(64,162,122,0.9)">推荐</span><span>歌曲</span></h1>
+                        </div>
+
+
+                    </div>
+
+                    <div class="layui-tab layui-tab-brief"  style="position: relative;top:-50px" >
+
+                        <form action="/musicIdList">
+                            <button type="submit" style="float: right" class="layui-btn">全部播放</button>
+                            <br><br>
+                            <hr class="layui-bg-green">
+
+                            <div th:each="list:${session.recommendList}">
+                                <a th:href="@{'/musicIdList?musicId='+${list.info_id}}">
+                                    <span th:text="${list.music_name}"></span>&nbsp;-
+                                    <span th:text="${list.singer}"></span>
+                                </a>
+                                <input name="musicId" th:value="${list.info_id}" type="hidden">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4 layui-col-lg4.5">
+                <div class="layui-fluid">
+                    <div class="layui-fluid">
+                        <h1><span style="color: rgba(64,162,122,0.9)">热门</span><span>歌手</span></h1>
+                    </div>
+                    <hr class="layui-bg-green"></hr>
+                    <div class="layui-row  layui-col-space15">
+                        <div class="layui-col-md6 layui-col-lg6">
+                            <img style="width:100%;" src="/images/singer/zjl.jpg"></img>
+                        </div>
+                        <div class="layui-col-md6 layui-col-lg6">
+                            <img style="width:100%;" src="/images/singer/ljj.jpg"></img>
+                        </div>
+                    </div>
+
+                    <div class="layui-row layui-col-space10">
+                        <div class="layui-col-md4 layui-col-lg4">
+                            <img style="width:100%;" src="/images/singer/dzq.jpg"></img>
+                        </div>
+                        <div class="layui-col-md4 layui-col-lg4">
+                            <img style="width:100%;" src="/images/singer/xs.jpg"></img>
+                        </div>
+                        <div class="layui-col-md4 layui-col-lg4">
+                            <img style="width:100%;" src="/images/singer/xzq.jpg"></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+
+        element.on('tab(docDemoTabBrief)', function(data){
+            console.log(data);
+        });
+    });
+</script>
+<script>
+    //以下脚本为标签属性转换成layui组件的还原过程
+    //调试:打开浏览器控制台(F12),在代码中某行增加 debugger 即可调试
+    var $ = layui.jquery, laytpl = layui.laytpl, laydate = layui.laydate, form = layui.form, layedit = layui.layedit, slider = layui.slider, element = layui.element, colorpicker = layui.colorpicker, upload = layui.upload, rate = layui.rate, carousel = layui.carousel, table = layui.table, flow = layui.flow;
+    var magicalDragLayuiUtil = {
+        rebuildLayUiControls: function () {
+            var _t = this;
+//日期
+            $(".magicalcoder-laydate").each(function (idx, item) {
+                laydate.render(_t.iteratorAttr({
+                    elem: item
+                }, item));
+            })
+//富文本
+            $(".magicalcoder-layedit").each(function (idx, item) {
+                var mcDataId = $(item).attr("id");
+                if (mcDataId) {
+                    layedit.build(mcDataId, {
+                        height: 300
+                    });
+                }
+            })
+//外键
+            $(".magicalcoder-foreign-select2").each(function (idx, item) {
+                var mcDataId = $(item).attr("id");
+                if (mcDataId) {
+                    $("#" + mcDataId).select2({
+                        allowClear: true,
+                        width: "150px",
+                        delay: 500,
+                    });
+                }
+            })
+//颜色选择器
+            $(".magicalcoder-color-picker").each(function (idx, item) {
+                colorpicker.render(_t.iteratorAttr({
+                    elem: $(item)}, item));
+            })
+//上传组件
+            $(".magicalcoder-layupload").each(function (idx, item) {
+                upload.render(_t.iteratorAttr({
+                    elem: $(item)}, item));
+            })
+//滑块
+            $(".magicalcoder-slider").each(function (idx, item) {
+                slider.render(_t.iteratorAttr({
+                    elem: $(item)}, item));
+            })
+//评分
+            $(".magicalcoder-rate").each(function (idx, item) {
+                rate.render(_t.iteratorAttr({
+                    elem: $(item)}, item));
+            })
+//轮播
+            $(".layui-carousel").each(function (idx, item) {
+                carousel.render(_t.iteratorAttr({
+                    elem: $(item)}, item));
+            })
+//流加载
+            $(".magicalcoder-flow").each(function (idx, item) {
+                flow.load(_t.iteratorAttr({
+                    elem: $(item)}, item));
+            })
+//代码
+            $(".magicalcoder-code").each(function (idx, item) {
+                layui.code(_t.iteratorAttr({
+                    elem: $(item)}, item));
+            })
+//弹窗
+            $(".magicalcoder-layer").each(function (idx, item) {
+//先隐藏起来
+                $(this).next().hide();
+                $(this).click(function () {
+                    var config = _t.iteratorAttr({
+                        elem: $(item)}, item);
+                    var type = config.type;
+                    if (type + '' == 1) {
+                        config.content = $(this).next();
+                    }
+                    if (config.btn) {
+                        config.btn = config.btn.split(",")
+                    }
+                    if (config.area) {
+                        config.area = config.area.split(",")
+                    }
+                    layer.open(config)
+                })
+            })
+//动态表格 我们单独封装了layui-table的初始化方式 至于数据排序 返回格式 等操作请根据你的具体环境自行封装
+            $(".magicalcoder-table").each(function (idx,
+                                                    item) {
+                var cols = [];
+//读取列配置
+                $(this).find(".magicalcoder-table-th").each(function (i, th) {
+                    cols.push(_t.iteratorAttr({
+                        title: $(this).text()}, th));
+                })
+                var tableConfig = _t.iteratorAttr({
+                        elem: $(item),
+                        cols: [cols]},
+                    item);
+//此时可以删除辅助列了,删除辅助孩子 在正式发布环境打开此行 布局器暂时不打开
+                $(this).html(''); //清空magicalcoder-table-th
+//初始化表格 至于返回的数据格式 您可以根据自己的系统自行改造 这里仅做一个示例 参考js\\data\\list.json
+                table.render(tableConfig);
+            })
+//部分组件初始化
+            element.init();
+//表单初始化
+            form.render();
+        },
+//将标签上的属性 转换成layui函数初始化时的参数名:参数值
+        iteratorAttr: function (renderConfig, dom) {
+            var attrs = dom.attributes;
+            for (var i = 0; i < attrs.length; i++) {
+                var attr = attrs[i];
+                var name = attr.name;
+                var value = attr.value;
+                if (name.indexOf("mc-") === 0) {
+                    name = name.replace("mc-attr-", '');
+                    name = name.replace("mc-event-", '');
+                    if (name.indexOf('str-') === 0) {
+                        name = name.replace('str-', '');
+                    } else if (name.indexOf('bool-') === 0) {
+                        name = name.replace('bool-', '');
+                        value == 'true' || value === '' ? value = true: value = value;
+                        value == 'false' ? value = false: value = value;
+                    } else if (name.indexOf('num-') === 0) {
+                        name = name.replace('num-', '');
+                        if (value !== '' && !isNaN(value)) {
+                            value = parseFloat(value);
+                        }
+                    } else if (name.indexOf('json-') === 0) {
+                        name = name.replace('json-', '');
+                        if (value !== '') {
+                            value = JSON.parse(value);
+                        }
+                    }
+                    renderConfig[this.htmlAttrNameToTuoFeng(name)] = value;
+                }
+            }
+            return renderConfig;
+        },
+//user-name -> userName html上的标签名转换成驼峰名称
+        htmlAttrNameToTuoFeng: function (name) {
+            var arr = name.split("-");
+            var newArr = []
+            for (var i = 0; i < arr.length; i++) {
+                if (i != 0) {
+                    if (arr[i] != '') {
+                        newArr.push(this.firstCharToUpLower(arr[i]));
+                    }
+                } else {
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr.join('');
+        },
+//首字母大写
+        firstCharToUpLower: function (name) {
+            var arr = name.split("");
+            arr[0] = arr[0].toUpperCase();
+            return arr.join('');
+        },
+//初始化图表 如果您未使用echarts可以删除此方法
+        renderEcharts: function () {
+// 基于准备好的dom，初始化echarts实例
+            var echartsBars = document.getElementsByClassName('echarts-bar');
+            if (echartsBars && echartsBars.length > 0) {
+                for (var i = 0; i < echartsBars.length; i++) {
+                    var myChart = echarts.init(echartsBars[i]);
+// 指定图表的配置项和数据
+                    var option = {
+                        title: {
+                            text: '集成ECharts 入门示例'
+                        },
+                        tooltip: {},
+                        legend: {
+                            data: ['销量']
+                        },
+                        xAxis: {
+                            data: ["衬衫",
+                                "羊毛衫",
+                                "雪纺衫",
+                                "裤子",
+                                "高跟鞋",
+                                "袜子"]
+                        },
+                        yAxis: {},
+                        series: [{
+                            name: '销量',
+                            type: 'bar',
+                            data: [5,
+                                20,
+                                36,
+                                10,
+                                10,
+                                20]
+                        }]
+                    };
+// 使用刚指定的配置项和数据显示图表。
+                    myChart.setOption(option);
+                }
+            }
+        }
+    }
+    magicalDragLayuiUtil.rebuildLayUiControls();
+    magicalDragLayuiUtil.renderEcharts();
+</script>
+<script>
+    //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+
+        element.on('tab(docDemoTabBrief)', function(data){
+            console.log(data);
+        });
+    });
+</script>
+<script>
+
+    function ChineseSinger() {
+        document.getElementById("singer-plane-1").style.display="block";
+        document.getElementById("singer-plane-2").style.display="none";
+        document.getElementById("singer-plane-3").style.display="none";
+        document.getElementById("singer-plane-4").style.display="none";
+    }
+    function EASinger() {
+        document.getElementById("singer-plane-1").style.display="none";
+        document.getElementById("singer-plane-2").style.display="block";
+        document.getElementById("singer-plane-3").style.display="none";
+        document.getElementById("singer-plane-4").style.display="none";
+    }
+    function JKSinger() {
+        document.getElementById("singer-plane-1").style.display="none";
+        document.getElementById("singer-plane-2").style.display="none";
+        document.getElementById("singer-plane-3").style.display="block";
+        document.getElementById("singer-plane-4").style.display="none";
+    }
+    function OtherSinger() {
+        document.getElementById("singer-plane-1").style.display="none";
+        document.getElementById("singer-plane-2").style.display="none";
+        document.getElementById("singer-plane-3").style.display="none";
+        document.getElementById("singer-plane-4").style.display="block";
+    }
+</script>
+
 </body>
 </html>

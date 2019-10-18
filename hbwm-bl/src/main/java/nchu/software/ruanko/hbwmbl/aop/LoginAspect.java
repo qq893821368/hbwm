@@ -24,6 +24,11 @@ public class LoginAspect {
 
     @Pointcut("execution(* nchu.software.ruanko.hbwmbl.controller.UserController.verify(..))")
     public void login(){}
+    @Pointcut("execution(* nchu.software.ruanko.hbwmbl.controller.UserController.logout(..))")
+    public void logout(){}
+    @Pointcut("execution(* nchu.software.ruanko.hbwmbl.controller.UserController.register(..))")
+    public void register(){}
+
 
     @AfterReturning(pointcut = "login()", returning = "flag")
     public void loginRegister(JoinPoint jp, Object flag) throws Throwable{
@@ -31,6 +36,20 @@ public class LoginAspect {
         //HttpServletRequest request = (HttpServletRequest) jp.getArgs()[0];
         String logging = impl.visit(account, (Boolean)flag);
         //EmailUtil.sendCaptcha("893821368@qq.com", "7zU9");
+        logger.info(logging);
+    }
+
+    @AfterReturning(pointcut = "logout()", returning = "flag")
+    public void logoutRegister(JoinPoint jp, Object flag) throws Throwable{
+        String account = (String) jp.getArgs()[2];
+        String logging = impl.exit(account);
+        logger.info(logging);
+    }
+
+    @AfterReturning(pointcut = "register()", returning = "flag")
+    public void enrollRegister(JoinPoint jp, Object flag) throws Throwable{
+        String account = (String) jp.getArgs()[2];
+        String logging = impl.register(account);
         logger.info(logging);
     }
 }

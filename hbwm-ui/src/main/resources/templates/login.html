@@ -14,17 +14,21 @@
 
         <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="layui/jquery.js"></script>
+        <script src="layui/js/jquery.js"></script>
+        <script src="layui/js/code.js"></script>
+        <script src="layui/js/layui.js"></script>
 
-        <script>
+
+        <script th:inline="javascript">
             $(document).ready(function () {
                 //发送验证码
                 $('#register-get-code').click(function () {
-                    var addressee = $('#register-addressee').val();
+                    var addressee = $('#captcha-addressee').val();
                     var isPhone = false;
                     if(addressee.search("@") == -1)
                         isPhone = true;
                     sendCode(addressee, isPhone);
+                    alert('发送完成');
                 });
                 function sendCode(addressee, isPhone, captcha) {
                     $.ajax({
@@ -34,7 +38,8 @@
                         url: "/sendCode?addressee=" + addressee + "&isPhone=" + isPhone,//url
                         async: false,
                         success: function (result) {
-                            alert('确实');
+                            alert(result);
+                            $('#real-captcha').val(result);
                         },
                         error : function(result) {
                             alert("异常！");
@@ -42,38 +47,84 @@
                     });
                 }
 
+                $('#login-submit').click(function () {
+                    if($('#check').val())
+                        $('#login-form').submit();
+                });
 
                 $('#LAY-user-login').click(function () {
                     $('#message').text('');
+                });
+                $('#register-body').click(function () {
                     $('#tips').text('');
                 });
-                $('#modal-container-927849').click(function () {
-                    $('#message').text('');
-                    $('#tips').text('');
+                $('#register-button').click(function () {
+                    register($('#real-captcha').val());
                 });
 
-                $('#register-submit').click(function () {
+                function register(realCaptcha) {
                     var account = $('#captcha-addressee').val();
                     var password = $('#newpassword').val();
-                    register(account, password);
-                });
-                function register(account, password) {
+                    var captcha = $('#captcha').val();
+
+                    if(checkCaptcha(captcha, realCaptcha))
+                        warehouse(account, password);
+                }
+                function checkCaptcha(captcha, realCaptcha) {
+                    captcha = captcha.replace(" ", "");
+                    if(captcha == "" || captcha == null){
+                        $('#tips').text('请填写验证码');
+                        return false;
+                    }
+                    else if(captcha != realCaptcha){
+                        $('#tips').text('验证码错误');
+                        return false;
+                    }
+                    else
+                        return true;
+                }
+                function warehouse(account, password) {
+                    var params = "?account=" + account + "&password=" + password;
                     $.ajax({
                         //几个参数需要注意一下
                         type: "POST",//方法类型
-                        dataType: "text",//预期服务器返回的数据类型
-                        url: "/register?addressee=" + account + "&newpassword=" + password,//url
+                        dataType: "Json",//预期服务器返回的数据类型
+                        url: "/register"+params,//url
                         async: false,
                         success: function (result) {
-                            alert('确实');
+                            var msg = result.data;
+                            if(msg == "success")
+                                window.location.href = "http://localhost/verify"+params;
+                            $('#tips').text(result.data);
                         },
                         error : function(result) {
-                            alert("异常！");
+                            alert(result.data);
                         }
                     });
                 }
+
             })
 
+            /******************************************************************************/
+            function openWindow(url, width, height)
+            {
+                width = width || 600;
+                height = height || 400;
+                var left = (window.screen.width - width) / 2;
+                var top = (window.screen.height - height) / 2;
+                var win = window.open(url, "_blank", "toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, left="+left+", top="+top+", width="+width+", height="+height);
+
+            }
+
+            function qqLogin()
+            {
+
+                var qqAppId = '101806840'; // 上面申请得到的appid
+                var qqAuthPath = 'http://www.hbwm.pp/login/qq'; // 前面设置的回调地址
+                var state = 'fjdslfjsdlkfd'; // 防止CSRF攻击的随机参数，必传，登录成功之后会回传，最好后台自己生成然后校验合法性
+                openWindow(`https://graph.qq.com/oauth2.0/authorize?response_type=token&client_id=${qqAppId}&redirect_uri=${encodeURIComponent(qqAuthPath)}&state=${state}`);
+            }
+            /******************************************************************************/
         </script>
     </head>
 
@@ -100,12 +151,13 @@
                         <div class="layui-form-item">
                             <div class="layui-row">
                                 <div class="layui-col-xs7">
-                                    <label class="layadmin-user-login-icon layui-icon layui-icon-vercode" for="LAY-user-login-vercode"></label>
-                                    <input type="text" name="vercode" id="LAY-user-login-vercode" lay-verify="required" placeholder="图形验证码" class="layui-input">
+                                    <label class="layadmin-user-login-icon layui-icon layui-icon-vercode" for="codeInput"></label>
+                                    <input type="text" name="vercode" id="codeInput" lay-verify="required" placeholder="图形验证码" class="layui-input">
                                 </div>
                                 <div class="layui-col-xs5">
                                     <div style="margin-left: 10px;">
-                                        <img src="https://www.oschina.net/action/user/captcha" class="layadmin-user-login-codeimg" id="LAY-user-get-vercode">
+                                        <canvas id="canvas" class="layadmin-user-login-codeimg"  width="100" height="43"></canvas>
+                                        <input type="hidden" style="visibility: hidden" id="check">
                                     </div>
                                 </div>
                             </div>
@@ -116,12 +168,12 @@
                             <a href="forget.html" class="layadmin-user-jump-change layadmin-link" style="margin-top: 7px;">忘记密码？</a>
                         </div>
                         <div class="layui-form-item">
-                            <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-login-submit" id="login-submit">登 录</button>
+                            <button class="layui-btn layui-btn-fluid" type="button" lay-filter="LAY-user-login-submit" id="login-submit">登 录</button>
                         </div>
                         </form>
                         <div class="layui-trans layui-form-item layadmin-user-login-other">
                             <label>社交账号登录</label>
-                            <a href="javascript:;"><i class="layui-icon layui-icon-login-qq"></i></a>
+                            <a href="javascript:qqLogin();"><i class="layui-icon layui-icon-login-qq"></i></a>
                             <a href="javascript:;"><i class="layui-icon layui-icon-login-wechat"></i></a>
                             <a href="javascript:;"><i class="layui-icon layui-icon-cellphone"></i></a>
                             <a th:replace="fragments/register::body"></a>
@@ -140,58 +192,5 @@
                 </p>
             </div>
         </div>
-
-
-        <!--<script src="layui/layui.js"></script>
-        <script>
-            layui.config({
-                base: '../../layuiadmin/' //静态资源所在路径
-            }).extend({
-                index: 'lib/index' //主入口模块
-            }).use(['index', 'user'], function(){
-                var $ = layui.$
-                    ,setter = layui.setter
-                    ,admin = layui.admin
-                    ,form = layui.form
-                    ,router = layui.router()
-                    ,search = router.search;
-
-                form.render();
-
-                //提交
-                form.on('submit(LAY-user-login-submit)', function(obj){
-
-                    //请求登入接口
-                    admin.req({
-                        url: layui.setter.base + 'json/user/login.js' //实际使用请改成服务端真实接口
-                        ,data: obj.field
-                        ,done: function(res){
-
-                            //请求成功后，写入 access_token
-                            layui.data(setter.tableName, {
-                                key: setter.request.tokenName
-                                ,value: res.data.access_token
-                            });
-
-                            //登入成功的提示与跳转
-                            layer.msg('登入成功', {
-                                offset: '15px'
-                                ,icon: 1
-                                ,time: 1000
-                            }, function(){
-                                location.href = '../'; //后台主页
-                            });
-                        }
-                    });
-
-                });
-                //实际使用时记得删除该代码
-                layer.msg('为了方便演示，用户名密码可随意输入', {
-                    offset: '15px'
-                    ,icon: 1
-                });
-
-            });
-        </script>-->
     </body>
 </html>

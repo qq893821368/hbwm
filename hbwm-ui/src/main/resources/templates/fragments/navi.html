@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <body th:fragment="navi">
+        <div class="layui-row">
+            <ul class="layui-nav" lay-filter="">
+                <li class="layui-nav-item"><a href="/home">首页</a></li>
+                <li class="layui-nav-item"><a href="/ranklist">榜单</a></li>
+                <li class="layui-nav-item"><a href="/singer">歌手</a></li>
+                <li class="layui-nav-item" style="float: right">
+                    <a href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img" th:text="${session.user}"></a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/echarts" th:if="${session.user} eq 'admin'">数据统计</a></dd>
+                        <dd><a href="/mui">修改个人信息</a></dd>
+                        <dd><a href="/ctrlUser" th:if="${session.user} eq 'admin'">修改用户组信息</a></dd>
+                        <dd><a href="/musicList" th:if="${session.user} eq 'admin'">歌曲管理</a></dd>
+                        <dd><a href="/admin/singer" th:if="${session.user} eq 'admin'">歌手管理</a></dd>
+                        <dd><a href="/logout">退出</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

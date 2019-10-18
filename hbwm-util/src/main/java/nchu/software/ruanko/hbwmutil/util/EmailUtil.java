@@ -72,7 +72,6 @@ public class EmailUtil {
     public static void sendCaptcha(String addressee, String captcha) throws EmailException {
         String subject = XMLUtil.getProperty(xml, "captcha-subject");
         String message = XMLUtil.getProperty(xml, "captcha-head")+captcha+XMLUtil.getProperty(xml, "captcha-foot");
-        System.out.println("message:"+message+"\n");
         sendEmail(addressee, XMLUtil.getProperty(xml, "captcha-sender"), subject, message);
     }
 }

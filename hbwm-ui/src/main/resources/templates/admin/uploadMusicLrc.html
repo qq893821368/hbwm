@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../static/layui/js/layui.js"></script>
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+</head>
+<script>
+
+    function thefile() {
+
+        var s=document.form1.filename.value;
+        if(s==""){
+            alert("Please choose a posdetail file.");
+            document.form1.filename.focus();
+            return;
+        }
+        //showLoadingWnd('Uploading,please wait...');
+        document.form1.submit();
+
+    }
+</script>
+<body>
+<form name="form1" action="MusicUploadLrc" enctype="multipart/form-data" method="post" onsubmit="return check();">
+    上传文件1：<input type="file" name="filename" id="file1"><br/>
+
+    <input class="layui-btn" type="submit" value="提交" onclick="thefile()">
+    <a href="musicList">跳过</a>
+</body>
+</html>

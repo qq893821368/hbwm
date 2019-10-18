@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>修改音频资源</title>
+    <script src="../../static/layui/js/layui.js"></script>
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+</head>
+<script>
+
+    function thefile() {
+
+        var s=document.form1.filename.value;
+        if(s==""){
+            alert("Please choose a posdetail file.");
+            document.form1.filename.focus();
+            return;
+        }
+        //showLoadingWnd('Uploading,please wait...');
+        document.form1.submit();
+
+    }
+</script>
+<body>
+    <form name="form1" action="MusicUpdateMusicfile" enctype="multipart/form-data" method="post" onsubmit="return check();">
+        音频文件：<input type="file" name="filename" id="file1"><br/>
+
+        <input class="layui-btn" type="submit" value="提交" onclick="thefile()">
+    </form>
+</body>
+<script></script>
+</html>
